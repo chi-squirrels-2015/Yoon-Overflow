@@ -1,1 +1,2 @@
-question_controller.rb
+class QuestionController < ApplicationController
+end
