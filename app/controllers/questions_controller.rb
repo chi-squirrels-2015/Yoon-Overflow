@@ -16,6 +16,13 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    @question = Question.new(question_params)
+
+    if @question.save
+      redirect_to @question, notice: 'Question was successfully created.'
+    else
+      render :new
+    end
   end
 
   def update
@@ -26,4 +33,10 @@ class QuestionsController < ApplicationController
     @question.destroy
     redirect_to questions_url, notice: 'Question was successfully deleted.'
   end
+
+  private
+
+    def question_params
+      params.require(:question).permit(:title, :content)
+    end
 end

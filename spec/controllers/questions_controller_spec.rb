@@ -39,8 +39,27 @@ describe QuestionsController do
     end
   end
 
-  # describe "POST create" do
-  # end
+  describe "POST create" do
+    context "when valid params are passed" do
+      it "creates a new Question" do
+        post :create, { question: {id: question.to_param} }
+        expect(assigns(:question)).to_not be_nil
+      end
+
+      it "assigns a newly created question as @question" do
+        post :create, { question: {id: question.to_param} }
+        expect(assigns(:question)).to be_kind_of(Question)
+      end
+
+      it "redirects to the created question" do
+        post :create, { question: {id: question.to_param} }
+        expect(response.status).to eq(200)
+      end
+    end
+
+    context "when invalid params are passed" do
+    end
+  end
 
   describe "DELETE #destroy" do
     it "assigns the requested question as @question" do
