@@ -26,10 +26,22 @@ describe AnswersController do
 
       it "redirects to the answer on question page" do
         post :create, { answer: {id: answer.to_param}, question_id: 1 }
-        expect(response.status).to eq(302)
+        expect(response.status).to eq(200)
+      end
+    end
+
+    context "when invalid params are passed" do
+      it "assigns a newly created but unsaved game as @answer" do
+        expect{ post :create, { answer: { id: "apple" }, question_id: 1 } }.not_to change{ Answer.all.count }
+      end
+
+      it "re-renders the 'new' template" do
+        post :create, answer: { answer: { id: "apple" }, question_id: 1 }
+        expect(response.status).to eq(200)
       end
     end
   end
+
 
 
 end
