@@ -26,6 +26,14 @@ class QuestionsController < ApplicationController
   end
 
   def update
+    @question = Question.find(params[:id])
+    @question.update(question_params)
+
+    if @question.save
+      redirect_to @question, notice: "Quesiton was successfully updated."
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -36,7 +44,7 @@ class QuestionsController < ApplicationController
 
   private
 
-    def question_params
-      params.require(:question).permit(:title, :content)
-    end
+  def question_params
+    params.require(:question).permit(:title, :content)
+  end
 end

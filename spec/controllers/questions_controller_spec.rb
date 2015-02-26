@@ -58,6 +58,34 @@ describe QuestionsController do
     end
 
     context "when invalid params are passed" do
+      it "assigns a newly created but unsaved question as @question [for title]" do
+        expect{ post :create, question: { title: ""} }.not_to change{ Question.all.count }
+      end
+
+      it "assigns a newly created but unsaved question as @question [for content]" do
+        expect{ post :create, question: { content: ""} }.not_to change{ Question.all.count }
+      end
+
+      it "re-renders the 'new' template" do
+        post :create, question: { title: "" }
+        expect(response).to render_template(:new)
+      end
+    end
+  end
+
+  describe 'PUT #update' do
+    context "when valid params are passed" do
+      it "changes the requested fields" do
+        put :update, { id: question.to_param, question: { title: "This is a new title" } }
+        expect(assigns(:question).title).to eq("This is a new title")
+      end
+    end
+
+    context "when invalid params are passed" do
+      it "redirects back to the edit page" do
+        put :update, { id: question.to_param, question: { title: "" } }
+        expect(response).to render_template(:edit)
+      end
     end
   end
 
