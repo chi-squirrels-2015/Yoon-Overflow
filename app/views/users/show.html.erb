@@ -1,19 +1,21 @@
 
 
-<%= image_tag @user.avatar_url %>
-<h1><%= @user.name %></h1>
-</br><%= @user.bio %>
-</br><%= @user.email %>
+<div class="col-md-4"> <%= image_tag @user.avatar_url %></div>
+<div class="col-md-4"><h1><%= @user.name %></h1></div>
+</br>Biography : <%= @user.bio %>
+</br>Email : <%= @user.email %>
 
 <h2> Question asked : </h2>
 
 <% @user.questions.each do |question| %>
-	</br><%= question.title %>
+<p> <%= link_to question.content, question %> </p>
+
 <% end %>
 
  <h2> Question Answered : </h2>
 
 <% @user.given_answers.each do |answer| %>
-	</br><%= answer.id %>
-	</br><%= answer.content %>
+<p>	<%= link_to answer.content, question_answer_path(answer.question,answer) %> </p>
 <% end %>
+
+<!-- /questions/:question_id/answers/:id -->
