@@ -11,10 +11,15 @@ class AnswersController < ApplicationController
     redirect_to question_path(@question)
   end
 
-  # def edit
-  # end
+  def edit
+    @question = Question.find(params[:question_id])
+    @answer = Answer.find(params[:id])
+  end
 
   # def update
+    # @question = Question.find(params[:question_id])
+    # @answer = Answer.find(params[:id])
+    # @answer.update(answer_params)
   # end
 
   # def delete
