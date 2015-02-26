@@ -1,11 +1,18 @@
-
 <div class="container">
 
   <div id="questions-container">
-  <%Question.all.each do |question|%>
-    <h2 id="question-title"><%=question.title%></h2>
-    <h4 id="question-user"><%=question.user.name%></h4>
+    <% @questions.each do |question| %>
+
+      <div id="votes">
+        <div class="arrow-up"></div>
+          <br>
+        <div class="arrow-down"></div>
+      </div>
+
+      <a href="/questions/<%= question.id %>"><h2 id="question-title"><%= question.title %></h2></a>
+      <a href="/users/<%= question.user.id %>"><h4 id="question-user"><%=question.user.name%></h4></a>
 <!--     <p  id="question-content"><%=question.content%></p> -->
-  <%end%>
-</div>
+    
+    <% end %>
+  </div>
 </div>  
