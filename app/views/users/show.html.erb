@@ -1,0 +1,19 @@
+
+
+<%= image_tag @user.avatar_url %>
+<h1><%= @user.name %></h1>
+</br><%= @user.bio %>
+</br><%= @user.email %>
+
+<h2> Question asked : </h2>
+
+<% @user.questions.each do |question| %>
+	</br><%= question.title %>
+<% end %>
+
+ <h2> Question Answered : </h2>
+
+<% @user.given_answers.each do |answer| %>
+	</br><%= answer.id %>
+	</br><%= answer.content %>
+<% end %>
