@@ -2,10 +2,17 @@
 <html>
 <head>
   <title>YoonOverflow</title>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'application' %> 
+    <%= csrf_meta_tags %>
+<header id="top-nav">
+  <div id="brand"><h1>Yoon Overflow</h1></div>
+</header>
+</head>
 
 <body>
-
 <%= yield %>
-
 </body>
+
+<footer>Yoon ITL Fortune 500</footer>
 </html>

@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+header {
+
+}
+
+
+#brand {
+  text-align: center;
+  font-size: 25px;
+}
+
+#questions-container {
+  padding-left: 15px;
+}
+
+#question-title {
+  text-decoration: underline;
+  margin-bottom: 3px;
+
+}
+
+#question-user {
+  margin-top: 3px;
+}
+
+/*#question-content {
+
+}*/
+
+footer {
+  position:absolute;
+  width:100%;
+  bottom:0px;
+  font-size: 20px;
+  text-align: center;
+}
+
