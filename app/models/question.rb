@@ -5,8 +5,6 @@ class Question < ActiveRecord::Base
   has_many   :answers
   has_many   :votes, as: :votable
 
-  validates :title,   presence: true,
-    inclusion: { message: "Title is a required field" }
-  validates :content, presence: true,
-    inclusion: { message: "Your question needs to have content" }
+  validates :title,   presence: true#, message: "Title is a required field"
+  validates :content, presence: true#, message: "Your question needs to have content"
 end
