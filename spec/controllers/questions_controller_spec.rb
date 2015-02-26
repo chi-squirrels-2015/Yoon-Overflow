@@ -32,11 +32,12 @@ describe QuestionsController do
     end
   end
 
-  # describe "GET #edit" do
-  #   it "" do
-
-  #   end
-  # end
+  describe "GET #edit" do
+    it "should assign the requested question as @question" do
+      get :edit, { id: question.to_param }
+      expect(assigns(:question)).to eq(question)
+    end
+  end
 
   # describe "POST create" do
   # end
@@ -50,7 +51,7 @@ describe QuestionsController do
     it "destroys the requested question" do
       expect {
         delete :destroy, id: question.id
-      }.to change(question, :count).by(-1)
+      }.to change(Question.all, :count).by(-1)
     end
 
     it "redirects to the questions list" do
