@@ -1,6 +1,12 @@
-<%= fields_for answer do |f| %>
-  <%= f.label :content%>:
-  <%= f.text_field :content%><br />
+<div class="container">
 
-  <%= f.submit %>
-<% end %>
+  <div id="new-answer">
+    <% form_for @answer do |f| %>
+      <%= f.label :content%>:
+      <%= f.text_field :content%><br />
+
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+</div>

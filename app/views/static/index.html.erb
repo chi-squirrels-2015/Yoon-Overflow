@@ -9,9 +9,8 @@
         <div class="arrow-down"></div>
       </div>
 
-      <a id="question-link" href="/questions/<%= question.id %>"><h2 id="question-title"><%= question.title %></h2></a>
-      <a id="user-link" href="/users/<%= question.user.id %>"><h4 id="question-user"><%=question.user.name%></h4></a>
-<!--     <p  id="question-content"><%=question.content%></p> -->
+     <h2 class="question-title"><%= link_to question.title, question %></h2>
+      <a id="user-link" href="/users/<%= question.user.id %>"><h4 class="question-user"><%=question.user.name%></h4></a>
 
     <% end %>
   </div>

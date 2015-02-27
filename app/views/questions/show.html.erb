@@ -12,8 +12,6 @@
     <p id="question-content"><%=@question.content%></p>
   </div>
 
-  <div id="page-break"></div>
-
   <div id="answers-container">
     <% @question.answers.each do |answer| %>
     <div class="answer">
@@ -32,5 +30,6 @@
     <% end %>
   </div>
 
+  <a href="/questions/<%= @question.id %>/answers/new" ><h3>Add an Answer</h3></a>
 
 </div>
