@@ -38,7 +38,6 @@ gem 'simplecov', :require => false, :group => :test
 # Use unicorn as the app server
 # gem 'unicorn'
 gem 'rspec'
-gem 'rspec-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
