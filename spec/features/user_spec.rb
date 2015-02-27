@@ -17,7 +17,7 @@ feature "User experience" do
       fill_in 'Email', :with => 'user@example.com'
       fill_in 'Password', :with => 'password'
       click_button 'Log in'
-      expect(page).to have_content 'Log in'  #to finish
+      expect(page).to have_content 'Logout'
 
 
     end
@@ -35,7 +35,7 @@ feature "User experience" do
       fill_in 'Email', :with => 'user@example.com'
       fill_in 'Password', :with => 'password'
       click_button 'Log in'
-      expect(page).to have_content 'Logout'  #to finish
+      expect(page).to have_content 'Logout'
     end
   end
 
@@ -48,11 +48,12 @@ feature "User experience" do
 
     scenario "should bring me to the index page upon logging out" do
       click_link('Logout')
-      expect(current_path).to eq(post_comments_path(post))
+      expect(current_path).to eq(root_path)
     end
 
     scenario "should update the top bar upon logging out" do
-      pending
+      click_link('Logout')
+      expect(page).to have_content 'Signup'
     end
   end
 end

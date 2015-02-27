@@ -1,22 +1,67 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/Desktop/Yoon-Overflow/spec/features/user_spec.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/spec/features/user_spec.rb": [
         1,
+        null,
+        1,
+        1,
+        6,
+        null,
         null,
         1,
         1,
         1,
         null,
         null,
+        null,
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null,
         1,
         1,
         0,
         null,
+        null,
+        1,
+        1,
+        null,
+        null,
         null
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/spec/rails_helper.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -68,14 +113,14 @@
         1,
         null
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/config/environment.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/config/application.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/config/application.rb": [
         1,
         null,
         1,
@@ -100,13 +145,13 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/config/boot.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/config/boot.rb": [
         null,
         1,
         null,
         1
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/config/environments/test.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/config/environments/test.rb": [
         1,
         null,
         null,
@@ -147,7 +192,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/assets.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -157,7 +202,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/backtrace_silencers.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -166,12 +211,12 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/cookies_serializer.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/devise.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/config/initializers/devise.rb": [
         null,
         null,
         1,
@@ -432,13 +477,13 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/filter_parameter_logging.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/inflections.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -456,18 +501,18 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/mime_types.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/session_store.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/wrap_parameters.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -483,7 +528,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/config/routes.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/config/routes.rb": [
         1,
         1,
         1,
@@ -549,7 +594,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/app/models/user.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/app/models/user.rb": [
         1,
         null,
         null,
@@ -565,31 +610,31 @@
         1,
         null
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/app/helpers/answers_helper.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/app/helpers/answers_helper.rb": [
         1,
         null
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/app/helpers/application_helper.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/app/controllers/static_controller.rb": [
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/app/controllers/application_controller.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/app/models/question.rb": [
+      "/Users/admin/Desktop/Yoon-Overflow/app/controllers/static_controller.rb": [
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/admin/Desktop/Yoon-Overflow/app/models/question.rb": [
         1,
         1,
         null,
@@ -602,6 +647,6 @@
         null
       ]
     },
-    "timestamp": 1425055980
+    "timestamp": 1425068876
   }
 }
