@@ -4,9 +4,16 @@
     <% @questions.each do |question| %>
 
       <div id="votes">
-        <div class="arrow-up"></div>
+<!--         <div class="arrow-up"> </div>
           <br>
-        <div class="arrow-down"></div>
+        <div class="arrow-down"></div> -->
+        <% if current_user %>
+          <%= link_to "upvote", questions_upvote_path(question), method: :put %>
+          <%= link_to "downvote", questions_downvote_path(question), method: :put %>
+        <% else %>
+          <%= link_to "upvote", new_user_session_path %>
+          <%= link_to "downvote", new_user_session_path %>
+        <% end %>
       </div>
 
       <a id="question-link" href="/questions/<%= question.id %>"><h2 id="question-title"><%= question.title %></h2></a>
