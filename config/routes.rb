@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
   get '/users/:id', to: 'users#show'
+  put '/users/:user_id/questions/:question_id/upvote', to: "questions#upvote"
+  put '/users/:user_id/questions/:question_id/downvote', to: "questions#downvote"
+  put '/users/:user_id/answers/:answer_id/upvote', to: "answers#upvote"
+  put '/users/:user_id/answers/:answer_id/downvote', to: "answers#downvote"
 
   resources :questions do
-    resources :users do
-      put "like", to: "questions#upvote"
-      put "dislike", to: "questions#downvote"
-    end
     resources :answers, except: [:index, :show]
   end
+
+
 
   root to: 'static#index'
 
