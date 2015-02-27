@@ -6,5 +6,4 @@ class UsersController < ActionController::Base
   	# @user = User.find(params[:id])
   	@user = User.friendly.find(params[:id])
   end
-
 end
