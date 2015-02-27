@@ -8,8 +8,8 @@
           <br>
         <div class="arrow-down"></div> -->
         <% if current_user %>
-          <%= link_to "upvote", question_user_like_path(question, current_user), method: :put %>
-          <%= link_to "downvote", question_user_dislike_path(question, current_user), method: :put %>
+          <%= link_to "upvote", questions_upvote_path(question), method: :put %>
+          <%= link_to "downvote", questions_downvote_path(question), method: :put %>
         <% else %>
           <%= link_to "upvote", new_user_session_path %>
           <%= link_to "downvote", new_user_session_path %>

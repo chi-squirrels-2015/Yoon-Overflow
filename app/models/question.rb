@@ -9,4 +9,18 @@ class Question < ActiveRecord::Base
 
   validates :title,   presence: true
   validates :content, presence: true
+
+  def count_upvotes
+    get_upvotes.count
+  end
+
+  def count_downvotes
+    get_downvotes.count
+  end
+
+  def count_total
+    get_upvotes.count - get_downvotes.count
+  end
+
+>>>>>>> upvotes and downvotes are saving to db and working
 end
