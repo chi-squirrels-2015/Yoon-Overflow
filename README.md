@@ -1,4 +1,4 @@
-# Yoon-Overflow
+# Yoon-Overflow ![build-status](https://travis-ci.org/chi-squirrels-2015/Yoon-Overflow.svg)
 
 ## Trello
 https://trello.com/b/xl0y3xRJ/dbc-overflow
