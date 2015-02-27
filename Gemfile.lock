@@ -45,10 +45,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
-<<<<<<< HEAD
     docile (1.1.5)
-=======
->>>>>>> updated Gemfile to run rspec
     erubis (2.7.0)
     execjs (2.3.0)
     faker (1.4.3)
