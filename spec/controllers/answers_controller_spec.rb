@@ -44,8 +44,26 @@ describe AnswersController do
 
   describe "GET #edit" do
     it "assigns the requested answer as @answer" do
-      get :edit, id: 1 , question_id: 1
+      get :edit, id: 1, question_id: 1
       expect(assigns(:answer)).to eq(answer)
+    end
+  end
+
+  describe "DELETE #destroy" do
+    it "assigns the requested answer as @answer" do
+      delete :destroy, id: 1, question_id: 1
+      expect(assigns(:answer)).to eq(answer)
+    end
+
+    it "destroys the requested answer" do
+      expect {
+        delete :destroy, id: 1, question_id: 1
+      }.to change(Answer, :count).by(-1)
+    end
+
+    it "redirects to the question" do
+        delete :destroy, id: 1, question_id: 1
+        expect(response).to be_redirect
     end
   end
 
