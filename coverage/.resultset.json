@@ -484,7 +484,10 @@
         null
       ],
       "/Users/apprentice/Desktop/Yoon-Overflow/config/routes.rb": [
+<<<<<<< HEAD
         1,
+=======
+>>>>>>> start question/show view
         1,
         1,
         null,
@@ -494,6 +497,10 @@
         null,
         1,
         null,
+<<<<<<< HEAD
+=======
+        null,
+>>>>>>> start question/show view
         null,
         null,
         null,
@@ -559,7 +566,17 @@
         1,
         1,
         1,
+<<<<<<< HEAD
         1,
+=======
+        null
+      ],
+      "/Users/apprentice/Desktop/Yoon-Overflow/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/Yoon-Overflow/app/controllers/questions_controller.rb": [
+>>>>>>> start question/show view
         1,
         null,
         1,
@@ -602,6 +619,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1425055980
+=======
+    "timestamp": 1424995787
+>>>>>>> start question/show view
   }
 }
