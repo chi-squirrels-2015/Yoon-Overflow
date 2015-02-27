@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   
   root to: 'static#index'
-  add static controller, index page, and route
+  # add static controller, index page, and route
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
