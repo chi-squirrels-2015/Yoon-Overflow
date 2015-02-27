@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe AnswersController do
   let!(:user) { User.create!(name: 'Fake Name', email: 'fake@fake.com', password: 'password') }
-  let!(:question) { Question.create!(title: 'Fake Title', content: 'fake content', user: user) }
-  let!(:answer) { Answer.create!(content: 'Fake Content', question: question, user: user) }
+  let!(:question) { Question.create!(title: 'Fake Title', content: 'Fake question', user: user) }
+  let!(:answer) { Answer.create!(content: 'Fake answer', question: question, user: user) }
 
   describe "GET #new" do
     it 'creates a new question' do
@@ -44,25 +44,40 @@ describe AnswersController do
 
   describe "GET #edit" do
     it "assigns the requested answer as @answer" do
-      get :edit, id: 1, question_id: 1
+      get :edit, id: answer.to_param, question_id: 1
       expect(assigns(:answer)).to eq(answer)
     end
   end
 
+  describe "PUT #update" do
+    context "when valid params are passed" do
+      it "assigns the requested answer as @answer" do
+      put :update, { id: answer.to_param, answer: {content: "New fake answer"}, question_id: 1 }
+      expect(assigns(:answer)).to eq(answer)
+    end
+
+      it "updates the answer" do
+        put :update, { id: answer.to_param, answer: {content: "New fake answer"}, question_id: 1 }
+        expect(assigns(:answer).content).to eq("New fake answer")
+      end
+    end
+
+  end
+
   describe "DELETE #destroy" do
     it "assigns the requested answer as @answer" do
-      delete :destroy, id: 1, question_id: 1
+      delete :destroy, id: answer.to_param, question_id: 1
       expect(assigns(:answer)).to eq(answer)
     end
 
     it "destroys the requested answer" do
       expect {
-        delete :destroy, id: 1, question_id: 1
+        delete :destroy, id: answer.to_param, question_id: 1
       }.to change(Answer, :count).by(-1)
     end
 
     it "redirects to the question" do
-        delete :destroy, id: 1, question_id: 1
+        delete :destroy, id: answer.to_param, question_id: 1
         expect(response).to be_redirect
     end
   end
