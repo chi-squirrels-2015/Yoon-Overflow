@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
   has_many :given_answers, class_name: 'Answer'
   extend FriendlyId
   friendly_id :name, use: :slugged
+
+  validates :email, uniqueness: true
 end

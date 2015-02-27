@@ -1,23 +1,15 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/Desktop/Yoon-Overflow/spec/models/question_spec.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/spec/models/user_spec.rb": [
         1,
         null,
         1,
-        5,
+        3,
         null,
         1,
         1,
         1,
-        10,
-        10,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
         1,
         1,
         1,
@@ -34,13 +26,18 @@
         1,
         1,
         1,
+        null,
+        null,
+        null,
+        1,
         1,
         null,
         null,
         1,
+        null,
+        null,
         1,
-        1,
-        1,
+        null,
         null,
         null,
         null
@@ -590,6 +587,8 @@
         1,
         1,
         1,
+        null,
+        1,
         null
       ],
       "/Users/apprentice/Desktop/Yoon-Overflow/app/helpers/answers_helper.rb": [
@@ -599,20 +598,8 @@
       "/Users/apprentice/Desktop/Yoon-Overflow/app/helpers/application_helper.rb": [
         1,
         null
-      ],
-      "/Users/apprentice/Desktop/Yoon-Overflow/app/models/question.rb": [
-        1,
-        2,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null
       ]
     },
-    "timestamp": 1425053266
+    "timestamp": 1425054285
   }
 }
