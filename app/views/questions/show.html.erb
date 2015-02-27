@@ -24,8 +24,8 @@
           <div class="arrow-down"></div>
         </div>
 
-      <p><%= answer.content %></p>
-      <h4><%= answer.user.name %></h4>
+      <p class="answer-content"><%= answer.content %></p>
+      <a href="/users/<%= answer.user.id %>"><h5 class="answer-user"><%= answer.user.name %></h5></a>
 
     </div>
     <% end %>
