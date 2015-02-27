@@ -13,26 +13,42 @@ feature "User experience" do
 
   context "User logging in" do
     scenario "should log me in with proper credentials" do
-      pending
+      visit '/users/sign_in'
+      fill_in 'Email', :with => 'user@example.com'
+      fill_in 'Password', :with => 'password'
+      click_button 'Log in'
+      expect(page).to have_content 'Log in'  #to finish
+
+
     end
 
     scenario "should not log me in unless I have proper credentials" do
-      pending
+      visit '/users/sign_in'
+      fill_in 'Email', :with => 'user@example.com'
+      fill_in 'Password', :with => 'passwordfail'
+      click_button 'Log in'
+      expect(page).to have_content 'Log in' 
     end
 
     scenario "should update the top bar if I log in" do
-      pending
+      visit '/users/sign_in'
+      fill_in 'Email', :with => 'user@example.com'
+      fill_in 'Password', :with => 'password'
+      click_button 'Log in'
+      expect(page).to have_content 'Logout'  #to finish
     end
   end
 
   context "User logging out" do
     before :each do
-      #log in
-      pending
+      visit '/users/sign_in'
+      fill_in 'Email', :with => 'user@example.com'
+      fill_in 'Password', :with => 'password'
     end
 
     scenario "should bring me to the index page upon logging out" do
-      pending
+      click_link('Logout')
+      expect(current_path).to eq(post_comments_path(post))
     end
 
     scenario "should update the top bar upon logging out" do
