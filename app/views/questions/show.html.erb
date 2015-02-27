@@ -1,6 +1,35 @@
 <div class="container">
-  <h1 id="question-title"><%=@question.title%></h1>
 
+  <div class="questions-container">
+    <div class="votes">
+      <div class="arrow-up"></div>
+        <br>
+      <div class="arrow-down"></div>
+    </div>
+
+    <h1 class="question-title"><%=@question.title%></h1>
+    <a href="/users/<%= @question.user.id %>"><h3 class="question-user"><%=@question.user.name%></h3></a>
     <p id="question-content"><%=@question.content%></p>
   </div>
+
+  <div id="page-break"></div>
+
+  <div id="answers-container">
+    <% @question.answers.each do |answer| %>
+    <div class="answer">
+
+        <div class="votes">
+          <div class="arrow-up"></div>
+            <br>
+          <div class="arrow-down"></div>
+        </div>
+
+      <p><%= answer.content %></p>
+      <h4><%= answer.user.name %></h4>
+
+    </div>
+    <% end %>
+  </div>
+
+
 </div>
