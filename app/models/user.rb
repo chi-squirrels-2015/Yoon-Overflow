@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   has_many :votes
   has_many :questions
   has_many :given_answers, class_name: 'Answer'
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 end
