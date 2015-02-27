@@ -5,12 +5,18 @@
       <%= stylesheet_link_tag 'application' %>
       <%= javascript_include_tag 'application' %> 
       <%= csrf_meta_tags %>
-    <header id="top-nav">
-      <div id="brand"><h1>Yoon Overflow</h1></div>
-    </header>
   </head>
 
   <body>
+    <nav>
+    <% unless current_user %>
+     <%= link_to 'Signup', new_user_registration_path  %>
+     <%= link_to 'Signin', new_user_session_path  %>
+     <% else %>
+     <%= link_to 'My Profile', profile_path(current_user.id) %>
+     <%= link_to 'Logout', destroy_user_session_path ,method: :delete%>
+    <% end %>
+    </nav>
     <%= yield %>
   </body>
 
