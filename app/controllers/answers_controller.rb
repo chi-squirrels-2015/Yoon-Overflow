@@ -16,10 +16,10 @@ class AnswersController < ApplicationController
     end
   end
 
-  # def edit
-  #   @question = Question.find(params[:question_id])
-  #   @answer = Answer.find(params[:id])
-  # end
+  def edit
+    @question = Question.find(params[:question_id])
+    @answer = Answer.find(params[:id])
+  end
 
   # def update
   #   @question = Question.find(params[:question_id])

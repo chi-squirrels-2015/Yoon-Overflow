@@ -40,8 +40,15 @@ describe AnswersController do
         expect(response).to render_template(:new)
       end
     end
-
   end
+
+  describe "GET #edit" do
+    it "assigns the requested answer as @answer" do
+      get :edit, id: 1 , question_id: 1
+      expect(assigns(:answer)).to eq(answer)
+    end
+  end
+
 end
 
 
