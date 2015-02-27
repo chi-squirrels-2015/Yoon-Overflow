@@ -15,7 +15,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
-
 gem 'faker'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -29,6 +28,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+gem 'capybara'
+
 gem 'simplecov', :require => false, :group => :test
 
 # Use ActiveModel has_secure_password
@@ -36,12 +37,14 @@ gem 'simplecov', :require => false, :group => :test
 
 # Use unicorn as the app server
 # gem 'unicorn'
-
+gem 'rspec'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'friendly_id'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end

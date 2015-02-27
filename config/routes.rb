@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  get '/users/:id', to: 'users#show'
 
   resources :questions do
     resources :answers, except: [:index, :show]
