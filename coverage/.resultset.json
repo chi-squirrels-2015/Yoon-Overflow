@@ -1,44 +1,19 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/Yoon-Overflow/spec/controllers/questions_controller_spec.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/spec/models/question_spec.rb": [
         1,
         null,
         1,
-        17,
-        null,
-        17,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
+        5,
         null,
         1,
         1,
         1,
-        1,
+        10,
+        10,
         null,
         null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
         1,
         null,
         null,
@@ -53,44 +28,7 @@
         1,
         1,
         1,
-        null,
-        null,
         1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        4,
-        null,
-        null,
-        1,
-        4,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
         null,
         null,
         1,
@@ -102,18 +40,12 @@
         1,
         1,
         1,
-        null,
-        null,
-        null,
         1,
-        1,
-        1,
-        null,
         null,
         null,
         null
       ],
-      "/Users/apprentice/Yoon-Overflow/spec/rails_helper.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -165,14 +97,14 @@
         1,
         null
       ],
-      "/Users/apprentice/Yoon-Overflow/config/environment.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/apprentice/Yoon-Overflow/config/application.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/config/application.rb": [
         1,
         null,
         1,
@@ -197,13 +129,13 @@
         null,
         null
       ],
-      "/Users/apprentice/Yoon-Overflow/config/boot.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/config/boot.rb": [
         null,
         1,
         null,
         1
       ],
-      "/Users/apprentice/Yoon-Overflow/config/environments/test.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/config/environments/test.rb": [
         1,
         null,
         null,
@@ -244,7 +176,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Yoon-Overflow/config/initializers/assets.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -254,7 +186,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Yoon-Overflow/config/initializers/backtrace_silencers.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -263,12 +195,12 @@
         null,
         null
       ],
-      "/Users/apprentice/Yoon-Overflow/config/initializers/cookies_serializer.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/apprentice/Yoon-Overflow/config/initializers/devise.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/devise.rb": [
         null,
         null,
         1,
@@ -529,13 +461,13 @@
         null,
         null
       ],
-      "/Users/apprentice/Yoon-Overflow/config/initializers/filter_parameter_logging.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/apprentice/Yoon-Overflow/config/initializers/inflections.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -553,18 +485,18 @@
         null,
         null
       ],
-      "/Users/apprentice/Yoon-Overflow/config/initializers/mime_types.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/apprentice/Yoon-Overflow/config/initializers/session_store.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/apprentice/Yoon-Overflow/config/initializers/wrap_parameters.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -580,13 +512,16 @@
         null,
         null
       ],
-      "/Users/apprentice/Yoon-Overflow/config/routes.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/config/routes.rb": [
         1,
-        1,
-        null,
         1,
         1,
         null,
+        1,
+        1,
+        null,
+        null,
+        1,
         null,
         null,
         null,
@@ -643,84 +578,31 @@
         null,
         null
       ],
-      "/Users/apprentice/Yoon-Overflow/app/models/user.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/app/models/user.rb": [
         1,
         null,
         null,
         1,
         null,
         null,
+        1,
+        1,
         1,
         1,
         1,
         null
       ],
-      "/Users/apprentice/Yoon-Overflow/app/helpers/application_helper.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/app/helpers/answers_helper.rb": [
         1,
         null
       ],
-      "/Users/apprentice/Yoon-Overflow/app/controllers/questions_controller.rb": [
+      "/Users/apprentice/Desktop/Yoon-Overflow/app/helpers/application_helper.rb": [
         1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/Yoon-Overflow/app/models/question.rb": [
         1,
         2,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        6,
-        null,
-        6,
-        0,
-        null,
-        6,
-        null,
-        null,
-        null,
-        1,
-        2,
-        2,
-        null,
-        2,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        3,
-        3,
-        3,
-        null,
-        null,
-        1,
-        null,
-        1,
-        8,
-        null,
-        null
-      ],
-      "/Users/apprentice/Yoon-Overflow/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        null
-      ],
-      "/Users/apprentice/Yoon-Overflow/app/models/question.rb": [
-        1,
-        1,
         null,
         1,
         1,
@@ -731,6 +613,6 @@
         null
       ]
     },
-    "timestamp": 1424992235
+    "timestamp": 1425053266
   }
 }
