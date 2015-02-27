@@ -19,10 +19,15 @@ describe AnswersController do
         expect(assigns(:answer)).to_not be_nil
       end
 
-      it "assigns a newly created answer as @answer" do
-        post :create, { answer: {id: answer.to_param}, question_id: 1 }
-        expect(assigns(:answer)).to be_kind_of(Answer)
-      end
+      # it "assigns a newly created game as @game" do
+      #   post :create, { game: {id: game.to_param} }
+      #   expect(assigns(:game)).to be_kind_of(Game)
+      # end
+
+      # it "redirects to the created game" do
+      #   post :create, { game: {id: game.to_param} }
+      #   expect(response.status).to eq(200)
+      # end
 
       it "redirects to the answer on question page" do
         post :create, { answer: {id: answer.to_param}, question_id: 1 }
@@ -41,9 +46,6 @@ describe AnswersController do
       end
     end
   end
-
-
-
 end
 
 
