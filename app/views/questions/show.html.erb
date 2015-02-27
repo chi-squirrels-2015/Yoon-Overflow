@@ -25,16 +25,10 @@
         </div>
 
       <p class="answer-content"><%= answer.content %></p>
-      <a href="/users/<%= answer.user.id %>"><h5 class="answer-user"><%=  %>  <%= link_to answer.user.id, answer.user.name %></h5></a>
+
+      <a href="/users/<%= answer.user.id %>"><h5 class="answer-user"><%= answer.user.name %></h5></a>
 
     </div>
-    <% end %>
-  </div>
-
-  <div id="new-answer">
-
-    <% form_for @answer do |f| %>
-    <%= render partial: "answers/new", object: @answer, as: 'answer' %>
     <% end %>
   </div>
 
