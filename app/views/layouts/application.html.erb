@@ -8,6 +8,13 @@
   </head>
 <header>
   <h1><a href='/'>Yoon Overflow</a></h1>
+  <ul>
+    <li>Ask a Question</li>
+    <% if current_user %>
+      <li>Logout</li>
+    <% end %>
+    
+  </ul>
 </header>
   <body>
     <%= yield %>

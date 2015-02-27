@@ -23,7 +23,6 @@ html {
 
 header {
   font-size: 25px;
-  margin: 0;
   padding: .75%;
   display: inline-block;
   width: 100%;
@@ -49,7 +48,7 @@ footer {
   text-align: center;
   padding-top: 10px;
   color: #ECECEA;
-
+  margin-left: -8px;
 }
 
 a, p, h1, h2, h3, h4, h5 {

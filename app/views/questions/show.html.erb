@@ -2,9 +2,9 @@
 
   <div class="questions-container">
     <div class="votes">
-      <div class="arrow-up"></div>
+     <%= link_to questions_upvote_path(@question) do%><div class="arrow-up"></div><% end %>
         <br>
-      <div class="arrow-down"></div>
+      <%= link_to questions_downvote_path(@question) do%><div class="arrow-down"></div><% end %>
     </div>
 
     <h1 class="question-title"><%=@question.title%></h1>
@@ -30,6 +30,6 @@
     <% end %>
   </div>
 
-  <a href="/questions/<%= @question.id %>/answers/new" ><h3>Add an Answer</h3></a>
+  <%= render "/answers/form" %>
 
 </div>
