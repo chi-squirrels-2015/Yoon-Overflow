@@ -1,34 +1,37 @@
+<div style="padding-top: 35px">
+		<div class="col-md-4">
+			<%= image_tag @user.avatar_url %>
+		</div>
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-<div class="container">
-	<div style="padding: 1px">
-			<div class="col-md-4">
-				<%= image_tag @user.avatar_url %>
-			</div>
-
-			<div class="col-md-4">
-				<h1><%= @user.name %></h1>
-			    </br><b>Biography :</b> <%= @user.bio %>
-			</br>
+		<div class="col-md-4">
+			<h1><%= @user.name %></h1>
+		    </br><b>Biography :</b> <%= @user.bio %>
 		</br>
-		        </br><b>Email : </b> <%= @user.email %>
-	        </div>
+	</br>
+	        </br><b>Email : </b> <%= @user.email %>
+        </div>
+</div>
+
+<div>
+	<div class="col-md-8">
+		<h2> Question asked : </h2>
+		<% @user.questions.each do |question| %>
+		<p> <%= link_to question.title, question %> </p>
+		<% end %>
 	</div>
 
-	<div>
-		<div class="col-md-8">
-			<h2> Question asked : </h2>
-			<% @user.questions.each do |question| %>
-			<p> <%= link_to question.title, question %> </p>
-			<% end %>
-		</div>
+	<div class="col-md-8">
+		<h2> Question Answered : </h2>
+		<% @user.given_answers.each do |answer| %>
+		<p>	<%= link_to answer.question.title, answer.question %> </p>
+		<% end %>
+	</div>
+    
 
-		<div class="col-md-8">
-			<h2> Question Answered : </h2>
-			<% @user.given_answers.each do |answer| %>
-			<p>	<%= link_to answer.question.title, answer.question %> </p>
-			<% end %>
-		</div>
-
+    <div class="col-md-8">
+		<h2> test asked : </h2>
+		<% @test.each do |question| %>
+		<p> <%= link_to question.title, question %> </p>
+		<% end %>
 	</div>
 </div>
