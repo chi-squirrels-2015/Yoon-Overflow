@@ -12,4 +12,16 @@ class User < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   validates :email, uniqueness: true
+
+  def count_upvotes
+    get_upvotes.count
+  end
+
+  def count_downvotes
+    get_downvotes.count
+  end
+
+  def count_total
+    get_upvotes.count - get_downvotes.count
+  end
 end
