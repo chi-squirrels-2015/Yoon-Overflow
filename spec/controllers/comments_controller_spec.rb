@@ -12,6 +12,15 @@ describe CommentsController do
 
   context "Commenting on a Question" do
     describe "GET #new" do
+      it 'creates a new comment' do
+        get :new, question_id: 1
+        expect(assigns(:commentQ)).to be_instance_of Comment
+      end
+
+      it 'does not save a new comment' do
+        get :new, question_id: 1
+        expect(assigns(:commentQ).id).to be_nil
+      end
     end
 
     describe "POST #create" do
@@ -25,6 +34,15 @@ describe CommentsController do
 
   context "Commenting on an Answer" do
     describe "GET #new" do
+      it 'creates a new comment' do
+        get :new, answer_id: 1
+        expect(assigns(:commentQ)).to be_instance_of Comment
+      end
+
+      it 'does not save a new comment' do
+        get :new, answer_id: 1
+        expect(assigns(:commentQ).id).to be_nil
+      end
     end
 
     describe "POST #create" do
