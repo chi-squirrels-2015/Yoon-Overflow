@@ -2,14 +2,17 @@
 
   <div class="questions-container">
     <div class="votes">
-     <%= link_to questions_upvote_path(@question) do%><div class="arrow-up"></div><% end %>
+      <div class="arrow-up"></div>
         <br>
-      <%= link_to questions_downvote_path(@question) do%><div class="arrow-down"></div><% end %>
+      <div class="arrow-down"></div>
     </div>
 
     <h1 class="question-title"><%=@question.title%></h1>
     <a href="/users/<%= @question.user.id %>"><h3 class="question-user"><%=@question.user.name%></h3></a>
     <p id="question-content"><%=@question.content%></p>
+    <% if current_user == @question.user %>
+      <a href="/questions/<%= @question.id %>/edit"><p>Edit Question</p></a>
+    <% end %>
   </div>
 
   <div id="answers-container">
@@ -25,7 +28,9 @@
       <p class="answer-content"><%= answer.content %></p>
 
       <a href="/users/<%= answer.user.id %>"><h5 class="answer-user"><%= answer.user.name %></h5></a>
-
+      <% if current_user == answer.user %>
+        <a href="/questions/<%= @question.id %>/answers/<%= answer.id %>/edit"><p>Edit Answer</p></a>
+      <% end %>
     </div>
     <% end %>
   </div>
