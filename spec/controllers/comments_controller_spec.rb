@@ -30,9 +30,6 @@ describe CommentsController do
     end
   end
 
-let!(:comment)  { Comment.create( content: "This is a Comment", commentable_type: "Answer",
-                                   commentable_id: answer.id ) }
-
   context "Commenting on an Answer" do
     describe "GET #new" do
       it 'creates a new comment' do
