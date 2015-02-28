@@ -8,15 +8,22 @@
     </div>
 
     <h1 class="question-title"><%=@question.title%></h1>
-    <a href="/users/<%= @question.user.id %>"><h3 class="question-user"><%=@question.user.name%></h3></a>
+    <%= link_to @question.user.name, profile_path(@question.user.id) %>
     <p id="question-content"><%=@question.content%></p>
+    <% @question.comments.each do |comment| %>
+      <p id="question-content"><%= comment.content %></p>
+      <%= link_to 'Post a comment on this question', question_comments_path(@question) %>
+      <!-- <%#= render "/comments/question_new" %> -->
+    <% end %>
+
     <% if current_user == @question.user %>
-      <a href="/questions/<%= @question.id %>/edit"><p>Edit Question</p></a>
+      <br><%= link_to 'Edit Question', edit_question_path %>
     <% end %>
   </div>
 
   <div id="answers-container">
     <% @question.answers.each do |answer| %>
+
     <div class="answer">
 
         <div class="votes">
@@ -26,10 +33,15 @@
         </div>
 
       <p class="answer-content"><%= answer.content %></p>
+      <% answer.comments.each do |comment| %>
+        <p class="answer-content"><%= comment.content %></p>
+      <% end %>
 
-      <a href="/users/<%= answer.user.id %>"><h5 class="answer-user"><%= answer.user.name %></h5></a>
+      <%= link_to answer.user.name, profile_path(answer.user.id) %>
+      <br><%= link_to 'Post a comment on this answer', question_answer_path(@question, answer) %>
+
       <% if current_user == answer.user %>
-        <a href="/questions/<%= @question.id %>/answers/<%= answer.id %>/edit"><p>Edit Answer</p></a>
+        <br><%= link_to 'Edit Answer', edit_question_answer_path(@question.id, answer.id) %>
       <% end %>
     </div>
     <% end %>
