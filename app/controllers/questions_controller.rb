@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
+    @question = Question.friendly.find(params[:id])
     @answer   = Answer.new
   end
 
@@ -43,21 +43,23 @@ class QuestionsController < ApplicationController
     @question.destroy
     redirect_to questions_url, notice: 'Question was successfully deleted.'
   end
-
-  def upvote
-    @question = Question.find(params[:question_id])
+ #### NEW #### rachel jd
+   def upvote
+    @question = Question.friendly.find(params[:id])
     @user = current_user
-    @question.upvote_by current_user
-    redirect_to question_path(@question)
+    @question.votes << Vote.create(voter_id: @user.id)
+    redirect_to(root_path)
   end
+
 
   def downvote
-    @question = Question.find(params[:id])
+    @question = Question.friendly.find(params[:id])
     @user = current_user
-    @question.downvote_by current_user
+    @question.votes.where(voter_id = @user.id).destroy
     redirect_to question_path(@question)
   end
 
+  ########
   private
 
   def question_params

@@ -6,17 +6,23 @@ class Question < ActiveRecord::Base
   belongs_to :user
   has_many   :answers
   has_many   :votes, as: :votable
-  has_many   :comments, as: :commentable
+  has_many :comments, as: :commentable
 
   validates :title,   presence: true
   validates :content, presence: true
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 
-  def question_upvote
-    self.vote + 1
+  def count_upvotes
+    get_upvotes.count
   end
 
-    def question_downvote
-    self.vote - 1
+  def count_downvotes
+    get_downvotes.count
+  end
+
+  def count_total
+    get_upvotes.count - get_downvotes.count
   end
 
 end
