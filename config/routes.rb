@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get '/answers/:answer_id/downvote' => "votes#answer_downvote", as: "answer_downvote"
 
   resources :questions do
+    resources :comments, only: [:new, :create]
     resources :answers, except: [:index, :show] do
+      resources :comments, only: [:new, :create]
     end
   end
 
