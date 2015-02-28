@@ -16,12 +16,12 @@
 
 /**************** LAYOUT ****************/
 
-html {
+/*html {
   background-color: #ECECEA;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
-header {
+/*header {
   font-size: 25px;
   padding: .75%;
   display: inline-block;
@@ -38,9 +38,9 @@ header a {
 
 header a:hover {
   color: #D9853B;
-}
+}*/
 
-footer {
+/*footer {
   position: absolute;
   bottom:0;
   width: 100%;
@@ -60,7 +60,7 @@ a:hover {
 }
 
 /**************** QUESTIONS / ANSWERS ****************/
-
+/*
 .questions-container {
   padding-left: 15px;
   padding-top: 80px;
@@ -95,11 +95,11 @@ a:hover {
   margin-left: 35px;
   margin-top: 0px;
 
-}
+}*/
 
 /**************** VOTES ****************/
 
-.votes { 
+/*.votes { 
   display: block;
   float: left;
   margin-right: 8px;
@@ -128,6 +128,5 @@ a:hover {
 .arrow-down:hover {
   border-top: 8px solid #D9853B;
 }
-
-
+*/
 
