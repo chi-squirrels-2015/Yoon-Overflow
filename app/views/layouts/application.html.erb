@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
   <head>
     <title>YoonOverflow</title>
       <%= stylesheet_link_tag 'application' %>
@@ -8,17 +9,74 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand text-uppercase" href="/">YoonOverflow</a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <% unless current_user %>
+               <li><button type="button" class="btn btn-success navbar-btn btn-circle"><%= link_to 'Signup', new_user_registration_path  %></button></li>
+               <li><button type="button" class="btn btn-success navbar-btn btn-circle"><%= link_to 'Signin', new_user_session_path  %></button></li>
+               <% else %>
+               <li><%= link_to 'My Profile', profile_path(current_user.id) %></li>
+               <li><%= link_to 'Logout', destroy_user_session_path ,method: :delete%></li>
+              <% end %>
+            </ul>
+        </div>
+      </div>
+    </nav>
     <nav>
-    <% unless current_user %>
-     <%= link_to 'Signup', new_user_registration_path  %>
-     <%= link_to 'Signin', new_user_session_path  %>
-     <% else %>
-     <%= link_to 'My Profile', profile_path(current_user.id) %>
-     <%= link_to 'Logout', destroy_user_session_path ,method: :delete%>
-    <% end %>
     </nav>
     <%= yield %>
   </body>
+<style>
 
+
+/*
+.header {
+    padding-top: 50px;
+    background-color: #eee;
+    overflow: hidden;
+}
+
+*/
+.btn {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.btn-circle {
+    border-radius: 20px;
+}
+
+.input-group input {
+    border: 0;
+    box-shadow: none;
+    padding-right: 30px;
+}
+.input-group input:focus,
+.input-group input:active {
+    outline: 0;
+    box-shadow: none;
+}
+.input-group-btn:last-child>.btn {
+    z-index: 2;
+    margin-left: -18px;   
+    border-radius: 20px;
+}
+
+
+</style>
 <!--   <footer>Yoon ITL Fortune 500</footer> -->
 </html>
+

@@ -22,5 +22,4 @@ class Question < ActiveRecord::Base
     get_upvotes.count - get_downvotes.count
   end
 
->>>>>>> upvotes and downvotes are saving to db and working
 end
