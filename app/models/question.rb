@@ -10,6 +10,8 @@ class Question < ActiveRecord::Base
 
   validates :title,   presence: true
   validates :content, presence: true
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 
   def count_upvotes
     get_upvotes.count
