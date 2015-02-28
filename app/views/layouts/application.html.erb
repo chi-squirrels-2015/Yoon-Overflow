@@ -6,7 +6,9 @@
       <%= javascript_include_tag 'application' %> 
       <%= csrf_meta_tags %>
   </head>
-
+<header>
+  <h1><a href='/'>Yoon Overflow</a></h1>
+</header>
   <body>
     <nav>
     <% unless current_user %>
@@ -20,5 +22,5 @@
     <%= yield %>
   </body>
 
-<!--   <footer>Yoon ITL Fortune 500</footer> -->
+  <footer>Yoon ITL Fortune 500</footer>
 </html>
