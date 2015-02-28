@@ -1,0 +1,19 @@
+<div class="container">
+
+  <div class="questions-container">
+    <% @questions.each do |question| %>
+
+      <div class="votes">
+        <div class="arrow-up"></div>
+          <br>
+        <div class="arrow-down"></div>
+      </div>
+
+      <h2 class="question-title"><%= link_to question.title, question %></h2>
+      <a id="user-link" href="/users/<%= question.user.id %>"><h4 class="question-user"><%=question.user.name %></h4></a>
+
+    <% end %>
+  </div>
+
+
+</div>
