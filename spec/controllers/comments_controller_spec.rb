@@ -5,21 +5,19 @@ describe CommentsController do
   let!(:question) { Question.create( title: "Test Question", content: "This is a question",
                                      user: user ) }
   let!(:answer)   { Answer.create( content: "This is an Answer", user: user, question: question ) }
-  let!(:commentQ)  { Comment.create( content: "This is a Comment", commentable_type: "Question",
+  let!(:comment)  { Comment.create( content: "This is a Comment", commentable_type: "Question",
                                      commentable_id: question.id ) }
-  let!(:commentA)  { Comment.create( content: "This is a Comment", commentable_type: "Answer",
-                                     commentable_id: answer.id ) }
 
   context "Commenting on a Question" do
     describe "GET #new" do
       it 'creates a new comment' do
         get :new, question_id: 1
-        expect(assigns(:commentQ)).to be_instance_of Comment
+        expect(assigns(:comment)).to be_instance_of Comment
       end
 
       it 'does not save a new comment' do
         get :new, question_id: 1
-        expect(assigns(:commentQ).id).to be_nil
+        expect(assigns(:comment).id).to be_nil
       end
     end
 
@@ -32,16 +30,19 @@ describe CommentsController do
     end
   end
 
+let!(:comment)  { Comment.create( content: "This is a Comment", commentable_type: "Answer",
+                                   commentable_id: answer.id ) }
+
   context "Commenting on an Answer" do
     describe "GET #new" do
       it 'creates a new comment' do
-        get :new, answer_id: 1
-        expect(assigns(:commentQ)).to be_instance_of Comment
+        get :new, question_id: 1, answer_id: 1
+        expect(assigns(:comment)).to be_instance_of Comment
       end
 
       it 'does not save a new comment' do
-        get :new, answer_id: 1
-        expect(assigns(:commentQ).id).to be_nil
+        get :new, question_id: 1, answer_id: 1
+        expect(assigns(:comment).id).to be_nil
       end
     end
 
