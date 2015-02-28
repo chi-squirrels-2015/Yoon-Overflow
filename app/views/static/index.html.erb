@@ -1,18 +1,27 @@
 <div class="container">
 
-  <div class="questions-container">
+  <div id="questions-container">
     <% @questions.each do |question| %>
-
-      <div class="votes">
-        <div class="arrow-up"></div>
+<!--       <div id="votes">
+ --><!--         <div class="arrow-up"> </div>
           <br>
-        <div class="arrow-down"></div>
-      </div>
+        <div class="arrow-down"></div> -->
+        <% if current_user %>
+          <%= link_to "upvote", root_path %>
+          <%= link_to "downvote", root_path %>
+        <% else %>
+          <%= link_to "upvote", root_path %>
+          <%= link_to "downvote", root_path %>
+        <% end %>
+    <div style="background-color: #d3d3d3; margin-bottom: 30px;padding-left: 60px;padding-top: 10px;padding-bottom: 10px">
+      <div style="border:1px solid #666;background: #fff;border-radius: 4px;width:1050px;">
 
-      <h2 class="question-title"><%= link_to question.title, question %></h2>
-      <h4><%= link_to question.user.name, profile_path(question.user.slug) %></h4>
-    <% end %>
+      <a id="question-link" href="/questions/<%= question.id %>"><h2 id="question-title"><%= question.title %></h2></a>
+      <a id="user-link" href="/users/<%= question.user.id %>"><h4 id="question-user"><%=question.user.name%></h4></a>
+<!--     <p  id="question-content"><%=question.content%></p> -->
+
+    </div>
   </div>
-
-
-</div>
+    <% end %>
+<!--   </div>
+ --></div>
