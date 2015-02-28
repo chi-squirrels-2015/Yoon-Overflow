@@ -10,8 +10,7 @@
       </div>
 
       <h2 class="question-title"><%= link_to question.title, question %></h2>
-      <a id="user-link" href="/users/<%= question.user.id %>"><h4 class="question-user"><%=question.user.name %></h4></a>
-
+      <h4><%= link_to question.user.name, profile_path(question.user.slug) %></h4>
     <% end %>
   </div>
 
