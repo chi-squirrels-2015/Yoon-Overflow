@@ -4,7 +4,7 @@
     <% @questions.each do |question| %>
 
       <div class="votes">
-        <div class="arrow-up"></div>
+        <% link_to votes question_upvote do %><div class="arrow-up"></div><% end %>
           <br>
         <div class="arrow-down"></div>
       </div>

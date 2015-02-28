@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   get '/users/:id' => 'users#show', as: 'profile'
 
-  get '/questions/:question_id/upvote' => "votes#question_upvote", as: "questions_upvote"
-  get '/questions/:question_id/downvote' => "votes#question_downvote", as: "questions_downvote"
-  get '/answers/:answer_id/upvote' => "votes#answer_upvote", as: "answer_upvote"
-  get '/answers/:answer_id/downvote' => "votes#answer_downvote", as: "answer_downvote"
+  puts '/questions/:question_id/upvote' => "votes#question_upvote", as: "questions_upvote"
+  puts '/questions/:question_id/downvote' => "votes#question_downvote", as: "questions_downvote"
+  puts '/answers/:answer_id/upvote' => "votes#answer_upvote", as: "answer_upvote"
+  puts '/answers/:answer_id/downvote' => "votes#answer_downvote", as: "answer_downvote"
 
   resources :questions do
     resources :comments, only: [:new, :create]

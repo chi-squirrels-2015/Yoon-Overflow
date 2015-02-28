@@ -9,4 +9,12 @@ class Question < ActiveRecord::Base
   validates :title,   presence: true
   validates :content, presence: true
 
+  def question_upvote
+    self.vote + 1
+  end
+
+    def question_downvote
+    self.vote - 1
+  end
+
 end
