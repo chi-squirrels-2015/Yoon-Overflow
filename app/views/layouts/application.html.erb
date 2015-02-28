@@ -33,12 +33,10 @@
                <li><%= link_to 'Logout', destroy_user_session_path ,method: :delete%></li>
               <% end %>
             </ul>
+    </nav>
         </div>
-      </div>
-    </nav>
-    <nav>
-    </nav>
     <%= yield %>
+      </div>
   </body>
 <style>
 
@@ -54,6 +52,7 @@
 .btn {
     padding-left: 25px;
     padding-right: 25px;
+    background-color:#d3d3d3;
 }
 .btn-circle {
     border-radius: 20px;
