@@ -1,8 +1,4 @@
 class QuestionsController < ApplicationController
-  def index
-    @questions = Question.all.order(:cached_weighted_average => :desc)
-  end
-
   def show
     @question = Question.find(params[:id])
     @answer   = Answer.new
