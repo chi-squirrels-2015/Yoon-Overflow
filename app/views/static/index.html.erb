@@ -1,18 +1,14 @@
-<div class="container">
-
   <div id="questions-container">
     <% @questions.each do |question| %>
-<!--       <div id="votes">
- --><!--         <div class="arrow-up"> </div>
-          <br>
-        <div class="arrow-down"></div> -->
-        <% if current_user %>
-          <%= link_to "upvote", root_path %>
-          <%= link_to "downvote", root_path %>
-        <% else %>
-          <%= link_to "upvote", root_path %>
-          <%= link_to "downvote", root_path %>
-        <% end %>
+    <!-- <div id="votes"><div class="arrow-up"></div><br><div class="arrow-down"></div> -->
+    <% if current_user %>
+      <%= link_to "upvote", root_path %>
+      <%= link_to "downvote", root_path %>
+    <% else %>
+      <%= link_to "upvote", root_path %>
+      <%= link_to "downvote", root_path %>
+    <% end %>
+
     <div style="background-color: #d3d3d3; margin-bottom: 30px;padding-left: 60px;padding-top: 10px;padding-bottom: 10px">
       <div style="border:1px solid #666;background: #fff;border-radius: 4px;width:1050px;">
 
@@ -24,4 +20,4 @@
   </div>
     <% end %>
 <!--   </div>
- --></div>
+ -->
