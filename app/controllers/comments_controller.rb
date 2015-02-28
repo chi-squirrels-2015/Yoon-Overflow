@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.author = current_user.id
+    @comment.author = User.find(current_user.id)
     if @comment.save
       render :show, layout: false
     else
