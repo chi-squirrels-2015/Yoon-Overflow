@@ -19,7 +19,7 @@ class Question < ActiveRecord::Base
   end
 
   def count_total
-    get_upvotes.count - get_downvotes.count
+    votes.size
   end
 
 end
