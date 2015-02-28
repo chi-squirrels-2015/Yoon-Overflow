@@ -7,6 +7,6 @@ class UsersController < ApplicationController
   	@user = User.friendly.find(params[:id])
   	# @test = @user.questions.order(:timestamps) 
       	@test = @user.questions
-      	
+      	#@question = Question.order("comments_count, created_at DESC")#needtobefor user only
   end
 end
