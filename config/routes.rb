@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   get '/users/:id' => 'users#show', as: 'profile'
 
   get '/questions/:question_id/upvote' => "votes#question_upvote", as: "questions_upvote"
