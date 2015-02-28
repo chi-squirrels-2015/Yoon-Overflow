@@ -11,15 +11,16 @@ class Question < ActiveRecord::Base
   validates :content, presence: true
 
   def count_upvotes
-    get_upvotes.count
+    cached_votes_up
+    # get_upvotes.count
   end
 
   def count_downvotes
-    get_downvotes.count
+    cached_votes_down
   end
 
   def count_total
-    get_upvotes.count - get_downvotes.count
+    cached_weighted_score
   end
 
 end
