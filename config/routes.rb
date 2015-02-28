@@ -1,24 +1,35 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   get '/users/:id' => 'users#show', as: 'profile'
 
-  puts '/questions/:question_id/upvote' => "votes#question_upvote", as: "questions_upvote"
-  puts '/questions/:question_id/downvote' => "votes#question_downvote", as: "questions_downvote"
-  puts '/answers/:answer_id/upvote' => "votes#answer_upvote", as: "answer_upvote"
-  puts '/answers/:answer_id/downvote' => "votes#answer_downvote", as: "answer_downvote"
 
   resources :questions do
-    resources :comments, only: [:new, :create]
     resources :answers, except: [:index, :show] do
-      resources :comments, only: [:new, :create]
     end
   end
 
   # resources :votes, only: [:update]
 
+  get '/questions/:question_id/comments/new' => "comments#question_new", as: "question_comments"
+  post '/questions/:question_id/comments/:comment_id' => "comments#question", as: "question_comments_create"
+
+  get '/questions/:question_id/answers/:answer_id/comments/new' => "comments#answer_new", as: "question_answer_comments"
+  post '/questions/:question_id/answers/:answer_id/comments/:comment_id' => "comments#answer", as: "question_answer_comments_create"
+
   root to: 'static#index'
 
 end
+
+
+  # ##### UNUSED CODE ##### #
+
+  # get '/questions/:question_id/upvote' => "votes#question_upvote", as: "questions_upvote"
+  # get '/questions/:question_id/downvote' => "votes#question_downvote", as: "questions_downvote"
+  # get '/answers/:answer_id/upvote' => "votes#answer_upvote", as: "answer_upvote"
+  # get '/answers/:answer_id/downvote' => "votes#answer_downvote", as: "answer_downvote"
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

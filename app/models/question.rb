@@ -1,4 +1,6 @@
 class Question < ActiveRecord::Base
+  # acts_as_votable
+
   scope :recent, -> { order("created_at DESC").limit(5) }
 
   belongs_to :user
