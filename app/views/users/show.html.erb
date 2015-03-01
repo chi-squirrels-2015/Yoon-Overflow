@@ -1,40 +1,28 @@
-<div>
-<div style="padding-top: 35px">
-		<div class="col-md-4">
-			<%= image_tag @user.avatar_url %>
-		</div>
+	<div>
+		<div class="col-md-2"><%= image_tag @user.avatar_url, size: "150x150" %></div>
+		<div class="col-md-10">
+			<h2><%= @user.name %></h2>
+	    </br>Biography: <%= @user.bio %>
+	    </br>Email: <%= @user.email %>
 
-		<div class="col-md-4">
-			<h1><%= @user.name %></h1>
-		    </br><b>Biography :</b> <%= @user.bio %>
-		</br>
-	</br>
-	        </br><b>Email : </b> <%= @user.email %>
-        </div>
-</div>
+	    <div>
+				<hr></hr>
+				<div class="col-md-6">
+					<h3><%= @user.questions.count %> Questions</h3>
+					<hr></hr>
+					<% @user.questions.each do |question| %>
+						<p><%= link_to question.title, question %></p>
+					<% end %>
+				</div>
 
-<div>
-	<div class="col-md-8">
-		<h2> Question asked : </h2>
-		<% @user.questions.each do |question| %>
-		<p> <%= link_to question.title, question %> </p>
-		<% end %>
+				<div class="col-md-6 profile">
+					<h3><%= @user.given_answers.count %> Answers</h3>
+					<hr></hr>
+					<% @user.given_answers.each do |answer| %>
+						<p><%= link_to answer.question.title, answer.question %></p>
+					<% end %>
+				</div>
+			</div>
+
+	   </div>
 	</div>
-
-	<div class="col-md-8">
-		<h2> Question Answered : </h2>
-		<% @user.given_answers.each do |answer| %>
-		<p>	<%= link_to answer.question.title, answer.question %> </p>
-		<% end %>
-	</div>
-    
-
-    <div class="col-md-8">
-		<h2> test asked : </h2>
-		<% @test.each do |question| %>
-		<p> <%= link_to question.title, question %> </p>
-		<% end %>
-	</div>
-</div>
-</div>
-

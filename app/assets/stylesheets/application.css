@@ -1,20 +1,10 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
 /**************** LAYOUT ****************/
+
+.container {
+  width: 1200px;
+  position: relative;
+  top: 100px;
+}
 
 html {
   background-color: #ECECEA;
@@ -26,15 +16,15 @@ html {
 
 
 
-.votes { 
+.votes {
   display: block;
   float: left;
   margin-right: 8px;
 }
 
 .arrow-up {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-bottom: 8px solid black;
@@ -45,8 +35,8 @@ html {
 }
 
 .arrow-down {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-top: 8px solid black;
@@ -55,3 +45,70 @@ html {
 .arrow-down:hover {
   border-top: 8px solid #D9853B;
 }
+
+
+/************** INDEX **************/
+
+table {
+  width: 100%;
+  margin: auto;
+}
+
+.small-data {
+  border-bottom: 1px solid #CFCFCF;
+  text-align: center;
+  width: 70px;
+  padding-left: 60px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#question-data {
+  border-bottom: 1px solid #CFCFCF;
+  padding-left: 70px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/*
+.header {
+    padding-top: 50px;
+    background-color: #eee;
+    overflow: hidden;
+}
+
+*/
+.btn {
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color:#d3d3d3;
+}
+.btn-circle {
+    border-radius: 20px;
+}
+
+.input-group input {
+    border: 0;
+    box-shadow: none;
+    padding-right: 30px;
+}
+.input-group input:focus,
+.input-group input:active {
+    outline: 0;
+    box-shadow: none;
+}
+.input-group-btn:last-child>.btn {
+    z-index: 2;
+    margin-left: -18px;
+    border-radius: 20px;
+}
+
+
+/*</style>
+  <footer>Yoon ITL Fortune 500</footer>
+</html>
+*/
+
+
+/**************** PROFILE ****************/
