@@ -9,7 +9,7 @@
 				<hr></hr>
 				<div class="col-mid-2">
 					<% if current_user == @user %>
-						<%= button_to 'Edit My Profile', root_path, class: "btn btn-primary btn-sm", method: :get %>
+						<%= button_to 'Edit My Profile', edit_user_path(current_user), class: "btn btn-primary btn-sm", method: :get %>
 					<% end %>
 				</div>
 				<div class="col-md-6">

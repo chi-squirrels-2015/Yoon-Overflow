@@ -25,7 +25,7 @@
           <br>Answers</td>
 
         <td class="question-data"><h4><%= link_to question.title, question_path(question) %></h4>
-        asked by <%= link_to question.user.name, profile_path(question.user.slug) %> at <%= question.created_at %></td>
+        asked by <%= link_to question.user.name, user_path(question.user.slug) %> at <%= question.created_at %></td>
 
       </tr>
     <% end %>
