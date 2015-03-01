@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
-  get '/users/:id' => 'users#show', as: 'profile'
 
+  resources :users, only: [:show, :edit, :update]
+  
   put '/questions/:question_id/upvote' => "votes#question_upvote", as: "questions_upvote"
   put '/questions/:question_id/downvote' => "votes#question_downvote", as: "questions_downvote"
   put '/answers/:answer_id/upvote' => "votes#answer_upvote", as: "answer_upvote"
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
 
   get '/questions/:question_id/answers/:answer_id/comments/new' => "comments#answer_new", as: "question_answer_comments"
   post '/questions/:question_id/answers/:answer_id/comments/:comment_id' => "comments#answer", as: "question_answer_comments_create"
+
 
   resources :questions do
     resources :answers, except: [:index, :show] do

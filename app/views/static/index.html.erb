@@ -25,14 +25,11 @@
           <br>Answers</td>
 
         <td class="question-data"><h4><%= link_to question.title, question_path(question) %></h4>
-        asked by <%= link_to question.user.name, profile_path(question.user.slug) %> at <%= question.created_at %></td>
+        asked by <%= link_to question.user.name, user_path(question.user.slug) %> at <%= question.created_at %></td>
 
       </tr>
     <% end %>
   </table>
-
-      <a id="question-link" href="/questions/<%= question.slug %>"><h2 id="question-title"><%= question.title %></h2></a>
-      <a id="user-link" href="/users/<%= question.user.slug %>"><h4 id="question-user"><%=question.user.name%></h4></a>
 <!--     <p  id="question-content"><#%=question.content%></p> -->
 
 
