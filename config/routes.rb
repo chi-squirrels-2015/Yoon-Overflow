@@ -7,12 +7,20 @@ Rails.application.routes.draw do
   put '/answers/:answer_id/upvote' => "votes#answer_upvote", as: "answer_upvote"
   put '/answers/:answer_id/downvote' => "votes#answer_downvote", as: "answer_downvote"
 
+
+  get '/questions/:question_id/comments/new' => "comments#question_new", as: "question_comments"
+  post '/questions/:question_id/comments/:comment_id' => "comments#question", as: "question_comments_create"
+
+  get '/questions/:question_id/answers/:answer_id/comments/new' => "comments#answer_new", as: "question_answer_comments"
+  post '/questions/:question_id/answers/:answer_id/comments/:comment_id' => "comments#answer", as: "question_answer_comments_create"
+  
+
   resources :questions do
-    resources :comments, only: [:new, :create]
     resources :answers, except: [:index, :show] do
-      resources :comments, only: [:new, :create]
     end
   end
+
+
 
   # resources :votes, only: [:update]
 

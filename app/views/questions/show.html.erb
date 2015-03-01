@@ -1,11 +1,20 @@
 <div class="container">
 
-  <div class="questions-container">
+<!--   <div class="questions-container">
     <div class="votes">
       <div class="arrow-up"></div>
         <br>
       <div class="arrow-down"></div>
-    </div>
+    </div> -->
+
+  <% if current_user %>
+    <%= link_to "upvote", questions_upvote_path(@question), method: :put %>
+    <%= @question.votes.count %>
+    <%= link_to "downvote", questions_downvote_path(@question), method: :put %>
+  <% else %>
+    <%= link_to "upvote", new_user_session_path %></br>
+    <%= link_to "downvote", new_user_session_path %>
+  <% end %>
 
     <h1 class="question-title"><%=@question.title%></h1>
     <%= link_to @question.user.name, profile_path(@question.user.id) %>
@@ -25,12 +34,20 @@
     <% @question.answers.each do |answer| %>
 
     <div class="answer">
+      <% if current_user %>
+        <%= link_to "upvote", answer_upvote_path(answer), method: :put %>
+        <%= answer.votes.count %>
+        <%= link_to "downvote", answer_downvote_path(answer), method: :put %>
+      <% else %>
+          <%= link_to "upvote", new_user_session_path %></br>
+          <%= link_to "downvote", new_user_session_path %>
+     <% end %>
 
-        <div class="votes">
+<!--    <div class="votes">
           <div class="arrow-up"></div>
             <br>
           <div class="arrow-down"></div>
-        </div>
+        </div> -->
 
       <p class="answer-content"><%= answer.content %></p>
       <% answer.comments.each do |comment| %>
@@ -38,7 +55,7 @@
       <% end %>
 
       <%= link_to answer.user.name, profile_path(answer.user.id) %>
-      <br><%= link_to 'Post a comment on this answer', question_answer_path(@question, answer) %>
+      <br><%= link_to 'Post a comment on this answer', question_answer_comments_path(@question, answer) %>
 
       <% if current_user == answer.user %>
         <br><%= link_to 'Edit Answer', edit_question_answer_path(@question.id, answer.id) %>

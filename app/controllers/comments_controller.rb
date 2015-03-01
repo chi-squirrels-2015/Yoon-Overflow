@@ -1,14 +1,14 @@
 class CommentsController < ApplicationController
 
   def question_new
-    @question = Question.find(params[:question_id])
+    @question = Question.friendly.find(params[:question_id])
     @comment = Comment.new
   end
 
   def question
-    @question = Question.find(params[:question_id])
+    @question = Question.friendly.find(params[:question_id])
     @comment = Comment.new(comment_params)
-    @comment.author = User.find(current_user.id)
+    @comment.author = User.friendly.find(current_user.id)
     @comment.commentable_id = @question.id
     @comment.commentable_type = "Question"
 
@@ -22,16 +22,16 @@ class CommentsController < ApplicationController
   end
 
   def answer_new
-    @question = Question.find(params[:question_id])
+    @question = Question.friendly.find(params[:question_id])
     @answer = Answer.find(params[:answer_id])
     @comment = Comment.new
   end
 
   def answer
-    @question = Question.find(params[:question_id])
+    @question = Question.friendly.find(params[:question_id])
     @answer = Answer.find(params[:answer_id])
     @comment = Comment.new(comment_params)
-    @comment.author = User.find(current_user.id)
+    @comment.author = User.friendly.find(current_user.id)
     @comment.commentable_id = @answer.id
     @comment.commentable_type = "Answer"
 
