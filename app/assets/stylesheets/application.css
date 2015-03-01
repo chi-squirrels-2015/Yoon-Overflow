@@ -35,14 +35,16 @@ table {
   border-bottom: 1px solid #CFCFCF;
   text-align: center;
   width: 70px;
+  height: 80px;
   padding-left: 60px;
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-#question-data {
+.question-data {
   border-bottom: 1px solid #CFCFCF;
+  height: 80px;
   padding-left: 70px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -65,3 +67,11 @@ table {
   border-right: 8px solid transparent;
   border-top: 8px solid black;
 }
+
+
+.comments-display-div {
+  /*border: 1px solid black;*/
+  width: 80%;
+  margin-left: 30px;
+}
+
