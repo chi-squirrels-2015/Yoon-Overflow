@@ -14,6 +14,12 @@
   </div>
 
   <div class="form-group">
+    <label for="image-url" class="sr-only">Avatar Url</label>
+    <%= f.label :avatar_url %><br />
+    <%= f.text_field :avatar_url, autofocus: true ,class: "form-control"%>
+  </div>
+
+  <div class="form-group">
     <label for="email" class="sr-only">Email</label>
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true ,class: "form-control"%>
