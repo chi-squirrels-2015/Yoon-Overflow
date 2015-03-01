@@ -25,3 +25,9 @@ questions.each do |question|
   answers << Answer.create(content: Faker::Hacker.say_something_smart, question: question,
                            user: users.sample)
 end
+
+comments = []
+30.times do
+  comments << Comment.create(content: Faker::Hacker.say_something_smart, commentable_id: (1..10).to_a.sample, commentable_type: ["Question", "Answer"].sample, author: users.sample)
+end
+

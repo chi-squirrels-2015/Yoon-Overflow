@@ -1,68 +1,96 @@
 <div class="container">
-
-<!--   <div class="questions-container">
-    <div class="votes">
-      <div class="arrow-up"></div>
-        <br>
-      <div class="arrow-down"></div>
-    </div> -->
-
-  <% if current_user %>
-    <%= link_to "upvote", questions_upvote_path(@question), method: :put %>
-    <%= @question.votes.count %>
-    <%= link_to "downvote", questions_downvote_path(@question), method: :put %>
-  <% else %>
-    <%= link_to "upvote", new_user_session_path %></br>
-    <%= link_to "downvote", new_user_session_path %>
-  <% end %>
-
-    <h1 class="question-title"><%=@question.title%></h1>
-    <%= link_to @question.user.name, profile_path(@question.user.id) %>
-    <p id="question-content"><%=@question.content%></p>
-    <% @question.comments.each do |comment| %>
-      <p id="question-content"><%= comment.content %></p>
-      <%= link_to 'Post a comment on this question', question_comments_path(@question) %>
-      <!-- <%#= render "/comments/question_new" %> -->
-    <% end %>
-
-    <% if current_user == @question.user %>
-      <br><%= link_to 'Edit Question', edit_question_path %>
-    <% end %>
-  </div>
-
-  <div id="answers-container">
-    <% @question.answers.each do |answer| %>
-
-    <div class="answer">
+  <div class="question-display-container">
+    <div class="col-md-1">
+      <br><br>
       <% if current_user %>
-        <%= link_to "upvote", answer_upvote_path(answer), method: :put %>
-        <%= answer.votes.count %>
-        <%= link_to "downvote", answer_downvote_path(answer), method: :put %>
-      <% else %>
-          <%= link_to "upvote", new_user_session_path %></br>
-          <%= link_to "downvote", new_user_session_path %>
-     <% end %>
-
-<!--    <div class="votes">
+        <%= link_to questions_upvote_path(@question), method: :put do %>
           <div class="arrow-up"></div>
-            <br>
+        <% end %>
+        <%= @question.votes.count %>
+        <%= link_to questions_downvote_path(@question), method: :put do %>
           <div class="arrow-down"></div>
-        </div> -->
-
-      <p class="answer-content"><%= answer.content %></p>
-      <% answer.comments.each do |comment| %>
-        <p class="answer-content"><%= comment.content %></p>
-      <% end %>
-
-      <%= link_to answer.user.name, profile_path(answer.user.id) %>
-      <br><%= link_to 'Post a comment on this answer', question_answer_comments_path(@question, answer) %>
-
-      <% if current_user == answer.user %>
-        <br><%= link_to 'Edit Answer', edit_question_answer_path(@question.id, answer.id) %>
+        <% end %>
+      <% else %>
+        <%= link_to new_user_session_path do %>
+          <div class="arrow-up"></div>
+        <% end %></br>
+        <%= link_to new_user_session_path do %>
+          <div class="arrow-down"></div>
+        <% end %>
       <% end %>
     </div>
-    <% end %>
+
+    <div class="col-md-10">
+      <h2><%=@question.title%></h2>
+      <p id="question-content"><%=@question.content%></p>
+      <p><%= link_to @question.user.name, profile_path(@question.user.id) %></p>
+      <% if current_user == @question.user %>
+        <br><%= link_to 'Edit Question', edit_question_path %>
+      <% end %>
+      <hr></hr>
+
+      <div class="comments-display-div">
+        <h4>Comments</h4>
+        <% @question.comments.each do |comment| %>
+          <p><%= comment.content %> - <%= link_to comment.author.name, profile_path(comment.author) %></p>
+        <% end %><%= link_to 'Add Comment', question_comments_path(@question) %>
+      </div>
+    </div>
+
   </div>
+</div>
+
+<br>
+<hr></hr>
+<hr></hr>
+
+  <table id="answers-display-table">
+    <% @question.answers.each do |answer| %>
+    <tr>
+      <td class="small-data">
+        <% if current_user %>
+          <%= link_to answer_upvote_path(answer), method: :put do %>
+            <div class="arrow-up"></div>
+          <% end %>
+          <%= answer.votes.count %>
+          <%= link_to answer_downvote_path(answer), method: :put do %>
+            <div class="arrow-down"></div>
+          <% end %>
+        <% else %>
+          <%= link_to new_user_session_path do %>
+            <div class="arrow-up"></div>
+          <% end %></br>
+          <%= link_to new_user_session_path do %>
+            <div class="arrow-down"></div>
+          <% end %>
+        <% end %>
+      </td>
+
+      <td class="question-data">
+        <br><p><%= answer.content %> - <%= link_to answer.user.name, profile_path(answer.user.id) %></p>
+        <% if current_user == answer.user %>
+        <p><%= link_to 'Edit Answer', edit_question_answer_path(@question.id, answer.id) %></p>
+        <% end %>
+
+          <hr></hr>
+          <div class="comments-display-div">
+            <h4>Comments</h4>
+              <% answer.comments.each do |comment| %>
+                <p><%= comment.content %> - <%= link_to comment.author.name, profile_path(comment.author) %></p>
+              <% end %>
+                <%= link_to 'Add Comment', question_comments_path(@question) %>
+          </div>
+
+      </td>
+
+    </tr>
+
+    <% end %>
+  </table>
+
+
+
+  <br><br>
 
   <%= render "/answers/form" %>
 
