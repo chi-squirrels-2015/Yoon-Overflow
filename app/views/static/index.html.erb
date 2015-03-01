@@ -6,8 +6,22 @@
     <% @questions.each do |question| %>
       <tr>
         <td class="small-data">
-          <div class="arrow-up"></div><br>
-          <div class="arrow-down"></div>
+          <% if current_user %>
+            <%= link_to questions_upvote_path(@question) do %>
+              <div class="arrow-up"></div>
+            <% end %>
+            <%= @question.votes.count %>
+            <%= link_to questions_downvote_path(@question) do %>
+              <div class="arrow-down"></div>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_session_path do %>
+              <div class="arrow-up"></div>
+            <% end %></br>
+            <%= link_to new_user_session_path do %>
+              <div class="arrow-down"></div>
+            <% end %>
+          <% end %>
         </td>
 
         <td class="small-data"><%= question.answers.count %>
