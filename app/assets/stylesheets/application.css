@@ -15,6 +15,16 @@
  *= require bootstrap.min
  */
 
+/* NAV BAR */
+
+table a:not(.btn), .table a:not(.btn) {
+  text-decoration: none;
+}
+
+.btn-sm {
+  margin: 10px;
+  clear: both;
+}
 
 table {
   width: 100%;
