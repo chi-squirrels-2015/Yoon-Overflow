@@ -9,4 +9,8 @@ class UsersController < ApplicationController
       	@test = @user.questions
       	#@question = Question.order("comments_count, created_at DESC")#needtobefor user only
   end
+  
+  def edit
+    @user = User.friendly.find(params[:id])
+  end
 end
