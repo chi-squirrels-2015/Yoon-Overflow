@@ -1,0 +1,13 @@
+ <div id="edit-user">
+  <%= form_for @user do |f| %>
+      <%= f.label :name%>:<br>
+      <%= f.text_field :name%><br>
+
+      <%= f.label :avatar_url%>
+      <%= f.text_field%>
+
+      <%= f.label :bio%>:<br>
+      <%= f.text_area :bio, sixe: "50x10"%>
+    <%= f.submit %>
+  <% end %>
+</div>
