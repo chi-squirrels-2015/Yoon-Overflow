@@ -29,6 +29,7 @@
           <li><%= button_to 'Signin', new_user_session_path, class: "btn btn-primary btn-sm", method: :get %></li>
           <% else %>
           <li><%= button_to 'My Profile', profile_path(current_user.id), class: "btn btn-primary btn-sm",method: :get %></li>
+          <li><%= button_to 'Ask A Question', new_question_path, class: "btn btn-primary btn-sm",method: :get %></li>
           <li><%= button_to 'Logout', destroy_user_session_path, class: "btn btn-primary btn-sm", method: :delete %></li>
           <% end %>
         </ul>
