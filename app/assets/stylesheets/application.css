@@ -26,15 +26,15 @@ html {
 
 
 
-.votes { 
+.votes {
   display: block;
   float: left;
   margin-right: 8px;
 }
 
 .arrow-up {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-bottom: 8px solid black;
@@ -45,8 +45,8 @@ html {
 }
 
 .arrow-down {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-top: 8px solid black;
@@ -55,3 +55,44 @@ html {
 .arrow-down:hover {
   border-top: 8px solid #D9853B;
 }
+
+
+
+/*
+.header {
+    padding-top: 50px;
+    background-color: #eee;
+    overflow: hidden;
+}
+
+*/
+.btn {
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color:#d3d3d3;
+}
+.btn-circle {
+    border-radius: 20px;
+}
+
+.input-group input {
+    border: 0;
+    box-shadow: none;
+    padding-right: 30px;
+}
+.input-group input:focus,
+.input-group input:active {
+    outline: 0;
+    box-shadow: none;
+}
+.input-group-btn:last-child>.btn {
+    z-index: 2;
+    margin-left: -18px;
+    border-radius: 20px;
+}
+
+
+</style>
+  <footer>Yoon ITL Fortune 500</footer>
+</html>
+
