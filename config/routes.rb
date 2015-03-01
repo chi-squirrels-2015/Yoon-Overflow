@@ -13,7 +13,6 @@ Rails.application.routes.draw do
 
   get '/questions/:question_id/answers/:answer_id/comments/new' => "comments#answer_new", as: "question_answer_comments"
   post '/questions/:question_id/answers/:answer_id/comments/:comment_id' => "comments#answer", as: "question_answer_comments_create"
-  
 
   resources :questions do
     resources :answers, except: [:index, :show] do

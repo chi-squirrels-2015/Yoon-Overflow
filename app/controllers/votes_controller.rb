@@ -5,9 +5,9 @@ class VotesController < ApplicationController
     @question = Question.friendly.find(params[:question_id])
     @user = current_user
     unless @question.votes.find_by(voter_id: @user.id )
-      @question.votes << Vote.create(voter_id: @user.id)
+    @question.votes << Vote.create(voter_id: @user.id)
     end
-    redirect_to :back
+    redirect_to(root_path)
   end
 
 
@@ -15,9 +15,9 @@ class VotesController < ApplicationController
     @question = Question.friendly.find(params[:question_id])
     @user = current_user
     if @question.votes.find_by(voter_id: @user.id )
-      @question.votes.find_by(voter_id: @user.id ).destroy
+     @question.votes.find_by(voter_id: @user.id ).destroy
     end
-    redirect_to :back
+    redirect_to(root_path)
 
   end
 
