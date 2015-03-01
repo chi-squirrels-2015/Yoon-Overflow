@@ -16,6 +16,12 @@
 
 /**************** LAYOUT ****************/
 
+.container {
+  width: 1200px;
+  position: relative;
+  top: 100px;
+}
+
 html {
   background-color: #ECECEA;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -92,7 +98,11 @@ html {
 }
 
 
-</style>
+/*</style>
   <footer>Yoon ITL Fortune 500</footer>
 </html>
+*/
+
+
+/**************** PROFILE ****************/
 
