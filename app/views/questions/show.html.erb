@@ -22,7 +22,7 @@
 
     <div class="col-md-10">
       <h2><%=@question.title%></h2>
-      <p id="question-content"><%=@question.content%></p>
+      <p id="question-content"><%= markdown(@question.content) %></p>  
       <p><%= link_to @question.user.name, profile_path(@question.user.id) %></p>
       <% if current_user == @question.user %>
         <br><%= link_to 'Edit Question', edit_question_path %>
