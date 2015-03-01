@@ -1,26 +1,51 @@
-<div class="container">
-
-  <div id="questions-container">
+  <h2>Top Questions</h2>
+  <table>
     <% @questions.each do |question| %>
-        <% if current_user %>
-          <%= link_to "upvote", questions_upvote_path(question), method: :put %>
-          <%= question.votes.count %>
-          <%= link_to "downvote", questions_downvote_path(question), method: :put %>
-        <% else %>
-          <%= link_to "upvote", new_user_session_path %></br>
-          <%= link_to "downvote", new_user_session_path %>
-        <% end %>
+      <tr>
+        <td class="small-data">
+          <% if current_user %>
+            <%= link_to questions_upvote_path(question), method: :put do %>
+              <div class="arrow-up"></div>
+            <% end %>
+            <%= question.votes.count %>
+            <%= link_to questions_downvote_path(question), method: :put do %>
+              <div class="arrow-down"></div>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_session_path do %>
+              <div class="arrow-up"></div>
+            <% end %></br>
+            <%= link_to new_user_session_path do %>
+              <div class="arrow-down"></div>
+            <% end %>
+          <% end %>
+        </td>
 
+        <td class="small-data"><%= question.answers.count %>
+          <br>Answers</td>
 
-    <div style="background-color: #d3d3d3; margin-bottom: 30px;padding-left: 60px;padding-top: 10px;padding-bottom: 10px">
-      <div style="border:1px solid #666;background: #fff;border-radius: 4px;width:1050px;">
+        <td class="question-data"><h4><%= link_to question.title, question_path(question) %></h4>
+        asked by <%= link_to question.user.name, profile_path(question.user.slug) %> at <%= question.created_at %></td>
+
+      </tr>
+    <% end %>
+  </table>
 
       <a id="question-link" href="/questions/<%= question.slug %>"><h2 id="question-title"><%= question.title %></h2></a>
       <a id="user-link" href="/users/<%= question.user.slug %>"><h4 id="question-user"><%=question.user.name%></h4></a>
 <!--     <p  id="question-content"><#%=question.content%></p> -->
 
-    </div>
-  </div>
-    <% end %>
-</div>
-</div>
+
+<!--  <%# if current_user %>
+  <%#= link_to "upvote", root_path %>
+  <%#= link_to "downvote", root_path %>
+<%# else %>
+  <%#= link_to "upvote", root_path %>
+  <%#= link_to "downvote", root_path %>
+<%# end %> -->
+
+<!-- <p id="question-content"><%#=question.content%></p> -->
+
+<!-- <div style="background-color: #d3d3d3; margin-bottom: 30px;padding-left: 60px;padding-top: 10px;padding-bottom: 10px">
+      <div style="background:#fff; width:1050px;"> -->
+<!-- </div> -->

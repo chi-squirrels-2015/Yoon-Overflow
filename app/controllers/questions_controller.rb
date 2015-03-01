@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @question = Question.find(params[:id])
+    @question = Question.friendly.find(params[:id])
   end
 
   def create
@@ -28,7 +28,7 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question = Question.find(params[:id])
+    @question = Question.friendly.find(params[:id])
     @question.update(question_params)
 
     if @question.save
@@ -39,7 +39,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question = Question.find(params[:id])
+    @question = Question.friendly.find(params[:id])
     @question.destroy
     redirect_to questions_url, notice: 'Question was successfully deleted.'
   end

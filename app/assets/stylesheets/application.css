@@ -12,10 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap.min
  */
 
-/**************** LAYOUT ****************/
-
+/* NAV BAR */
 html {
   background-color: #ECECEA;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -24,36 +24,59 @@ html {
 
 /**************** QUESTIONS / ANSWERS ****************/
 
-
-
-.votes { 
-  display: block;
-  float: left;
-  margin-right: 8px;
+table a:not(.btn), .table a:not(.btn) {
+  text-decoration: none;
 }
 
+.btn-sm {
+  margin: 10px;
+  clear: both;
+}
+
+table {
+  width: 100%;
+  margin: auto;
+}
+
+.small-data {
+  border-bottom: 1px solid #CFCFCF;
+  text-align: center;
+  width: 70px;
+  height: 80px;
+  padding-left: 60px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.question-data {
+  border-bottom: 1px solid #CFCFCF;
+  height: 80px;
+  padding-left: 70px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+
 .arrow-up {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-bottom: 8px solid black;
 }
 
-.arrow-up:hover {
-  border-bottom: 8px solid #D9853B;
-}
-
 .arrow-down {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-top: 8px solid black;
 }
 
-.arrow-down:hover {
-  border-top: 8px solid #D9853B;
+.comments-display-div {
+  /*border: 1px solid black;*/
+  width: 80%;
+  margin-left: 30px;
 }
-
-
