@@ -14,7 +14,7 @@
         <%= link_to new_user_session_path do %>
           <div class="arrow-up"></div>
         <% end %></br>
-        <%= question.votes.count %>
+        <%= @question.votes.count %>
         <%= link_to new_user_session_path do %>
           <div class="arrow-down"></div>
         <% end %>
@@ -28,13 +28,21 @@
       <% if current_user == @question.user %>
         <br><%= link_to 'Edit Question', edit_question_path %>
       <% end %>
+
+      <br>
+
+      <% if current_user %>
+       <%= link_to "Submit Answer", new_question_answer_path(@question), remote: true, method: :get, class: "btn btn-primary btn-sm" %>
+        <div class="submit-answer-form"></div>
+      <% end %>
+
       <hr></hr>
 
       <div class="comments-display-div">
         <h4>Comments</h4>
         <% @question.comments.each do |comment| %>
           <p><%= comment.content %> - <%= link_to comment.author.name, user_path(comment.author) %></p>
-        <% end %><%= link_to 'Add Comment', question_comments_path(@question) %>
+        <% end %>
       </div>
     </div>
 
@@ -88,11 +96,5 @@
 
     <% end %>
   </table>
-
-
-
-  <br><br>
-
-  <%= render "/answers/form" %>
 
 </div>
