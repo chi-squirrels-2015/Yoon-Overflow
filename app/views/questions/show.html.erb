@@ -76,7 +76,7 @@
       </td>
 
       <td class="question-data">
-        <br><p><%= answer.content %> - <%= link_to answer.user.name, user_path(answer.user.id) %></p>
+       <br><p><%= markdown(answer.content) %> - <%= link_to answer.user.name, user_path(answer.user.id) %></p>
         <% if current_user == answer.user %>
         <p><%= link_to 'Edit Answer', edit_question_answer_path(@question.id, answer.id) %></p>
         <% end %>
