@@ -1,3 +1,4 @@
+#Elliott is awesome!!
 class CommentsController < ApplicationController
 
   def question_new
