@@ -31,3 +31,11 @@ comments = []
   comments << Comment.create(content: Faker::Hacker.say_something_smart, commentable_id: (1..10).to_a.sample, commentable_type: ["Question", "Answer"].sample, author: users.sample)
 end
 
+
+100.times do
+  Vote.create(votable_id: Question.all.pluck(:id).sample, voter_id: User.all.pluck(:id).sample, votable_type: "Question")
+end
+
+100.times do
+  Vote.create(votable_id: Answer.all.pluck(:id).sample, voter_id: User.all.pluck(:id).sample, votable_type: "Answer")
+end

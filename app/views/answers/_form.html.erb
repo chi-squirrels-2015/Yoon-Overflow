@@ -1,8 +1,9 @@
  <div id="new-answer">
+<br>
   <%= form_for [@question, @answer] do |f| %>
-    <%= f.label :answer %>:
-    <%= f.text_area :content, :size => "50X10" %>
+    <p><%= f.label :answer %>:</p>
+    <p><%= f.text_area :content, :size => "50X10" %></p>
 
-    <%= f.submit %>
+    <p><%= f.submit %><p>
   <% end %>
 </div>
