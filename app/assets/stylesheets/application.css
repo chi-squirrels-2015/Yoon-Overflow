@@ -16,6 +16,13 @@
  */
 
 /* NAV BAR */
+html {
+  background-color: #ECECEA;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+
+/**************** QUESTIONS / ANSWERS ****************/
 
 table a:not(.btn), .table a:not(.btn) {
   text-decoration: none;
@@ -68,10 +75,8 @@ table {
   border-top: 8px solid black;
 }
 
-
 .comments-display-div {
   /*border: 1px solid black;*/
   width: 80%;
   margin-left: 30px;
 }
-
