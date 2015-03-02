@@ -24,7 +24,7 @@
     <div class="col-md-10">
       <h2><%=@question.title%></h2>
       <p id="question-content"><%= markdown(@question.content) %></p>
-      <p><%= link_to @question.user.name, user_path(@question.user.id) %></p>
+      <p><%= link_to @question.user.name, user_path(@question.user.slug) %></p>
       <% if current_user == @question.user %>
         <br><%= link_to 'Edit Question', edit_question_path %>
       <% end %>
@@ -42,7 +42,7 @@
         <% if current_user %>
         <h4>Comments</h4>
           <% @question.comments.each do |comment| %>
-            <p><%= comment.content %> - <%= link_to comment.author.name, user_path(comment.author) %></p>
+            <p><%= comment.content %> - <%= link_to comment.author.name, user_path(comment.author.slug) %></p>
           <% end %>
           <%= link_to 'Add Comment', question_comments_path(@question) %>
         <% end %>
@@ -79,7 +79,7 @@
       </td>
 
       <td class="question-data">
-       <br><p><%= markdown(answer.content) %> - <%= link_to answer.user.name, user_path(answer.user.id) %></p>
+       <br><p><%= markdown(answer.content) %> - <%= link_to answer.user.name, user_path(answer.user.slug) %></p>
         <% if current_user == answer.user %>
         <p><%= link_to 'Edit Answer', edit_question_answer_path(@question.id, answer.id) %></p>
         <% end %>
@@ -89,7 +89,7 @@
             <div class="comments-display-div">
             <h4>Comments</h4>
               <% answer.comments.each do |comment| %>
-                <p><%= comment.content %> - <%= link_to comment.author.name, user_path(comment.author) %></p>
+                <p><%= comment.content %> - <%= link_to comment.author.name, user_path(comment.author.slug) %></p>
               <% end %>
                 <%= link_to 'Add Comment', question_answer_comments_path(@question, answer) %>
               <% end %>
