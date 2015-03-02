@@ -51,7 +51,6 @@
 
 <br>
 <hr></hr>
-<hr></hr>
 
   <table id="answers-display-table">
     <% @question.answers.each do |answer| %>
@@ -87,7 +86,7 @@
               <% answer.comments.each do |comment| %>
                 <p><%= comment.content %> - <%= link_to comment.author.name, user_path(comment.author) %></p>
               <% end %>
-                <%= link_to 'Add Comment', question_comments_path(@question) %>
+              <%= link_to 'Add Comment', question_comments_path(@question) %>
           </div>
 
       </td>
