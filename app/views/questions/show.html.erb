@@ -39,9 +39,12 @@
       <hr></hr>
 
       <div class="comments-display-div">
+        <% if current_user %>
         <h4>Comments</h4>
-        <% @question.comments.each do |comment| %>
-          <p><%= comment.content %> - <%= link_to comment.author.name, user_path(comment.author) %></p>
+          <% @question.comments.each do |comment| %>
+            <p><%= comment.content %> - <%= link_to comment.author.name, user_path(comment.author) %></p>
+          <% end %>
+          <%= link_to 'Add Comment', question_comments_path(@question) %>
         <% end %>
       </div>
     </div>
@@ -82,12 +85,14 @@
         <% end %>
 
           <hr></hr>
-          <div class="comments-display-div">
+          <% if current_user %>
+            <div class="comments-display-div">
             <h4>Comments</h4>
               <% answer.comments.each do |comment| %>
                 <p><%= comment.content %> - <%= link_to comment.author.name, user_path(comment.author) %></p>
               <% end %>
-              <%= link_to 'Add Comment', question_comments_path(@question) %>
+                <%= link_to 'Add Comment', question_answer_comments_path(@question, answer) %>
+              <% end %>
           </div>
 
       </td>
