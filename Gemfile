@@ -31,6 +31,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'capybara'
+gem 'redcarpet', '~> 3.0.0'
 
 gem 'simplecov', :require => false, :group => :test
 
