@@ -1,0 +1,4 @@
+<h4>Comments</h4>
+  <% object.comments.each do |comment| %>
+      <p><%= comment.content %> - <%= link_to comment.author.name, user_path(comment.author.slug) %></p>
+    <% end %>

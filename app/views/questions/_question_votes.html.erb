@@ -1,0 +1,17 @@
+<% if current_user %>
+  <%= link_to questions_upvote_path(question), method: :put do %>
+    <div class="arrow-up"></div>
+  <% end %>
+  <%= question.votes.count %>
+  <%= link_to questions_downvote_path(question), method: :put do %>
+    <div class="arrow-down"></div>
+  <% end %>
+<% else %>
+  <%= link_to new_user_session_path do %>
+    <div class="arrow-up"></div>
+  <% end %>
+  <%= question.votes.count %>
+  <%= link_to new_user_session_path do %>
+    <div class="arrow-down"></div>
+  <% end %>
+<% end %>
