@@ -1,13 +1,13 @@
 class VotesController < ApplicationController
 
-
    def question_upvote
     @question = Question.friendly.find(params[:question_id])
     @user = current_user
     unless @question.votes.find_by(voter_id: @user.id )
     @question.votes << Vote.create(voter_id: @user.id)
     end
-    redirect_to(root_path)
+    render json: {}
+    # redirect_to(root_path)
   end
 
 

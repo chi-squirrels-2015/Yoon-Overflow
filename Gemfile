@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'binding_of_caller'
+
+gem 'kaminari'
+
 gem 'twitter-bootstrap-rails'
 
 gem 'acts_as_votable', '~> 0.10.0'
@@ -52,3 +56,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
 
+group :development do
+  gem "better_errors"
+end
