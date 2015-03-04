@@ -9,7 +9,6 @@
 
 <body>
   <nav class="navbar navbar-default">
-      <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
         <span class="sr-only">Toggle navigation</span>
@@ -20,20 +19,18 @@
       <a class="navbar-brand text-uppercase" href="/">YoonOverflow</a>
     </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-
-          <% unless current_user %>
-          <li><%= button_to 'Signup', new_user_registration_path, class: "btn btn-primary btn-sm", method: :get %></li>
-          <li><%= button_to 'Signin', new_user_session_path, class: "btn btn-primary btn-sm", method: :get %></li>
-          <% else %>
-          <li><%= button_to 'My Profile', user_path(current_user.slug), class: "btn btn-primary btn-sm",method: :get %></li>
-          <li><%= button_to 'Ask A Question', new_question_path, class: "btn btn-primary btn-sm" id="ask-question", method: :get %></li>
-          <li><%= button_to 'Logout', destroy_user_session_path, class: "btn btn-primary btn-sm", method: :delete %></li>
-          <% end %>
-        </ul>
-      </nav>
+        <% unless current_user %>
+        <li><%= button_to 'Signup', new_user_registration_path, class: "btn btn-primary btn-sm", method: :get %></li>
+        <li><%= button_to 'Signin', new_user_session_path, class: "btn btn-primary btn-sm", method: :get %></li>
+        <% else %>
+        <li><%= button_to 'My Profile', user_path(current_user.slug), class: "btn btn-primary btn-sm", method: :get %></li>
+        <li><%= button_to 'Ask A Question', new_question_path, class: "btn btn-primary btn-sm ask-question", remote: true, method: :get %></li>
+        <li><%= button_to 'Logout', destroy_user_session_path, class: "btn btn-primary btn-sm", method: :delete %></li>
+        <% end %>
+      </ul>
+  </nav>
 
     <div class="container">
       <%= yield %>

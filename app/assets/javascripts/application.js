@@ -30,12 +30,18 @@ $(document).ready(function() {
     })
   })
 
-  $(document).on('#ask-question', function(event) {
+  $(document).on('click', '.ask-question', function(event) {
     event.preventDefault();
-    console.log("Submission was received");
+    $.ajax({
+      url: 'questions/new',
+      method: 'GET',
+      success: function(response) {
+        console.log(response)
+      }
+    })
   })
 
-  $(".question-vote").on('click', function(event) {
+  $(".question-vote").on('submit', function(event) {
     event.preventDefault();
     event.stopPropagation();
     $.ajax({
