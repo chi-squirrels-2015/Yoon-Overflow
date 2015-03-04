@@ -1,4 +1,5 @@
 class VotesController < ApplicationController
+  respond_to :html, :js
 
    def question_upvote
     @question = Question.friendly.find(params[:question_id])
@@ -6,8 +7,8 @@ class VotesController < ApplicationController
     unless @question.votes.find_by(voter_id: @user.id )
     @question.votes << Vote.create(voter_id: @user.id)
     end
-    render json: {}
-    # redirect_to(root_path)
+
+    render json: { votes: @question.votes.count }
   end
 
 

@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  respond_to :html, :js
 
   def new
     @question = Question.friendly.find(params[:question_id])
@@ -6,16 +7,13 @@ class AnswersController < ApplicationController
   end
 
   def create
-    # question_answers POST   /questions/:question_id/answers(.:format)          answers#create
     @question = Question.friendly.find(params[:question_id])
     @answer = Answer.new(answer_params)
     @answer.user = current_user
     @answer.question = @question
 
     if @answer.save
-      redirect_to question_path(@question)
-    else
-      render "new"
+      render partial: 'answers/answer', locals: { answer: @answer }, layout: false
     end
   end
 

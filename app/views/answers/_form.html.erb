@@ -1,6 +1,6 @@
- <div id="new-answer">
-<br>
-  <%= form_for [@question, @answer] do |f| %>
+<div id="new-answer">
+  <br>
+  <%= form_for [@question, @answer], remote: true do |f| %>
     <p><%= f.label :answer %>:</p>
     <p><%= f.text_area :content, :size => "50X10" %></p>
 
