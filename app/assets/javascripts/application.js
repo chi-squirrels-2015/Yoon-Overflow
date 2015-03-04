@@ -30,25 +30,17 @@ $(document).ready(function() {
     })
   })
 
-  $(".question-upvote").on('click', function(event) {
+  $(".question-vote").on('click', function(event) {
     event.preventDefault();
     event.stopPropagation();
-    var voteInstance = this;
-    // console.log(voteInstance);
+    var voteInstance = $(this);
 
     $.ajax({
       url: this.href,
       method: "PUT",
       data: $(this).serialize(),
       success: function(response) {
-        console.log($(voteInstance).closest("span"))
-        // $(voteInstance).find("span").context.nextElementSibling.html(response["votes"]);
-
-        // $(voteInstance).find("span").html(response["votes"]);
-        // $(".question-vote").html(response["votes"]);
-        // console.log(response["votes"]);
-        // how to reference the specific thing we clicked on inside of the success function
-        // get to the span right after it and change it
+        $("#voted-question-" + response["question"]).text(response["votes"]);
       }
     })
   })

@@ -1,17 +1,19 @@
-<% if current_user %>
-  <%= link_to questions_upvote_path(question), class: "question-upvote", method: :put do %>
-    <div class="arrow-up"></div>
+<div class="question-voting-div">
+  <% if current_user %>
+    <%= link_to questions_upvote_path(question), class: "question-vote", method: :put do %>
+      <div class="arrow-up"></div>
+    <% end %>
+    <span class="question-vote" id="voted-question-<%= question.id %>"><%= question.votes.count %></span>
+    <%= link_to questions_downvote_path(question), class: "question-vote", method: :put do %>
+      <div class="arrow-down"></div>
+    <% end %>
+  <% else %>
+    <%= link_to new_user_session_path do %>
+      <div class="arrow-up"></div>
+    <% end %>
+    <%= question.votes.count %>
+    <%= link_to new_user_session_path do %>
+      <div class="arrow-down"></div>
+    <% end %>
   <% end %>
-  <span class="question-vote"><%= question.votes.count %></span>
-  <%= link_to questions_downvote_path(question), method: :put do %>
-    <div class="arrow-down"></div>
-  <% end %>
-<% else %>
-  <%= link_to new_user_session_path do %>
-    <div class="arrow-up"></div>
-  <% end %>
-  <%= question.votes.count %>
-  <%= link_to new_user_session_path do %>
-    <div class="arrow-down"></div>
-  <% end %>
-<% end %>
+</div>

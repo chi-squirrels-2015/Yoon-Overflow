@@ -8,7 +8,7 @@ class VotesController < ApplicationController
     @question.votes << Vote.create(voter_id: @user.id)
     end
 
-    render json: { votes: @question.votes.count }
+    render json: { votes: @question.votes.count, question: @question.id }
   end
 
 
@@ -18,8 +18,8 @@ class VotesController < ApplicationController
     if @question.votes.find_by(voter_id: @user.id )
      @question.votes.find_by(voter_id: @user.id ).destroy
     end
-    redirect_to(root_path)
 
+    render json: { votes: @question.votes.count, question: @question.id }
   end
 
   # def question_upvote
