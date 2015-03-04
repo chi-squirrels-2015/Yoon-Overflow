@@ -44,4 +44,18 @@ $(document).ready(function() {
       }
     })
   })
+
+  $(".answer-vote").on('click', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    $.ajax({
+      url: this.href,
+      method: "PUT",
+      data: $(this).serialize(),
+      success: function(response) {
+        $("#voted-answer-" + response["answer"]).text(response["votes"]);
+      }
+    })
+  })
 })
