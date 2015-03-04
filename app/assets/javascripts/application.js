@@ -17,7 +17,7 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $(document).on('submit', ".new_answer", function(event) {
+  $(document).on('submit', '.new_answer', function(event) {
     event.preventDefault();
     $.ajax({
       url: this.action,
@@ -30,11 +30,14 @@ $(document).ready(function() {
     })
   })
 
+  $(document).on('#ask-question', function(event) {
+    event.preventDefault();
+    console.log("Submission was received");
+  })
+
   $(".question-vote").on('click', function(event) {
     event.preventDefault();
     event.stopPropagation();
-    var voteInstance = $(this);
-
     $.ajax({
       url: this.href,
       method: "PUT",
@@ -48,7 +51,6 @@ $(document).ready(function() {
   $(".answer-vote").on('click', function(event) {
     event.preventDefault();
     event.stopPropagation();
-
     $.ajax({
       url: this.href,
       method: "PUT",

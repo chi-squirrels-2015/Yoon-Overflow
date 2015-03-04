@@ -30,8 +30,6 @@ class VotesController < ApplicationController
     end
 
     render json: { votes: @answer.votes.count, answer: @answer.id }
-
-    # redirect_to :back
   end
 
   def answer_downvote
@@ -42,7 +40,5 @@ class VotesController < ApplicationController
     end
 
     render json: { votes: @answer.votes.count, answer: @answer.id }
-
-    # redirect_to :back
   end
 end

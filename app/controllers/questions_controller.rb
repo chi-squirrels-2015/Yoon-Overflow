@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  respond_to :html, :js
+
   def index
     redirect_to "/"
   end
