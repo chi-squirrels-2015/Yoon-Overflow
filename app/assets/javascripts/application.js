@@ -15,3 +15,55 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  $(document).on('submit', '.new_answer', function(event) {
+    event.preventDefault();
+    $.ajax({
+      url: this.action,
+      method: this.method,
+      data: $(this).serialize(),
+      success: function(response){
+        $("#answers-display-table").prepend(response);
+        $(".new_answer").remove();
+      }
+    })
+  })
+
+  $(document).on('click', '.ask-question', function(event) {
+    event.preventDefault();
+    $.ajax({
+      url: 'questions/new',
+      method: 'GET',
+      success: function(response) {
+        console.log(response)
+      }
+    })
+  })
+
+  $(".question-vote").on('submit', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    $.ajax({
+      url: this.href,
+      method: "PUT",
+      data: $(this).serialize(),
+      success: function(response) {
+        $("#voted-question-" + response["question"]).text(response["votes"]);
+      }
+    })
+  })
+
+  $(".answer-vote").on('click', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    $.ajax({
+      url: this.href,
+      method: "PUT",
+      data: $(this).serialize(),
+      success: function(response) {
+        $("#voted-answer-" + response["answer"]).text(response["votes"]);
+      }
+    })
+  })
+})

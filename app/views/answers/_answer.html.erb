@@ -1,0 +1,20 @@
+<tr>
+  <td class="small-data">
+    <%= render partial: "/answers/answer_votes", locals: { answer: answer } %>
+  </td>
+
+  <td class="question-data">
+    <br><p><%= markdown(answer.content) %> - <%= link_to answer.user.name, user_path(answer.user.slug) %></p>
+    <% if current_user == answer.user %>
+      <p><%= link_to 'Edit Answer', edit_question_answer_path(@question.id, answer.id) %></p>
+    <% end %>
+
+    <hr></hr>
+    <% if current_user %>
+      <div class="comments-display-div">
+        <%= render partial: "questions/comments_view", locals: { object: answer } %>
+        <%= link_to 'Add Comment', question_answer_comments_path(@question, answer) %>
+      </div>
+    <% end %>
+  </td>
+</tr>

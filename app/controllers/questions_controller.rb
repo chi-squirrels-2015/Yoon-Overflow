@@ -1,6 +1,8 @@
 class QuestionsController < ApplicationController
+  respond_to :html, :js
+
   def index
-    @questions = Question.all
+    redirect_to "/"
   end
 
   def show

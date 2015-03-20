@@ -2,23 +2,7 @@
   <div class="question-display-container">
     <div class="col-md-1">
       <br><br>
-      <% if current_user %>
-        <%= link_to questions_upvote_path(@question), method: :put do %>
-          <div class="arrow-up"></div>
-        <% end %>
-        <%= @question.votes.count %>
-        <%= link_to questions_downvote_path(@question), method: :put do %>
-          <div class="arrow-down"></div>
-        <% end %>
-      <% else %>
-        <%= link_to new_user_session_path do %>
-          <div class="arrow-up"></div>
-        <% end %></br>
-        <%= @question.votes.count %>
-        <%= link_to new_user_session_path do %>
-          <div class="arrow-down"></div>
-        <% end %>
-      <% end %>
+      <%= render partial: "/questions/question_votes", locals: { question: @question } %>
     </div>
 
     <div class="col-md-10">
@@ -39,16 +23,12 @@
       <hr></hr>
 
       <div class="comments-display-div">
+        <%= render partial: "comments_view", locals: { object: @question } %>
         <% if current_user %>
-        <h4>Comments</h4>
-          <% @question.comments.each do |comment| %>
-            <p><%= comment.content %> - <%= link_to comment.author.name, user_path(comment.author.slug) %></p>
-          <% end %>
           <%= link_to 'Add Comment', question_comments_path(@question) %>
         <% end %>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -56,49 +36,8 @@
 <hr></hr>
 
   <table id="answers-display-table">
-    <% @question.answers.each do |answer| %>
-    <tr>
-      <td class="small-data">
-        <% if current_user %>
-          <%= link_to answer_upvote_path(answer), method: :put do %>
-            <div class="arrow-up"></div>
-          <% end %>
-          <%= answer.votes.count %>
-          <%= link_to answer_downvote_path(answer), method: :put do %>
-            <div class="arrow-down"></div>
-          <% end %>
-        <% else %>
-          <%= link_to new_user_session_path do %>
-            <div class="arrow-up"></div>
-          <% end %>
-          <%= answer.votes.count %>
-          <%= link_to new_user_session_path do %>
-            <div class="arrow-down"></div>
-          <% end %>
-        <% end %>
-      </td>
-
-      <td class="question-data">
-       <br><p><%= markdown(answer.content) %> - <%= link_to answer.user.name, user_path(answer.user.slug) %></p>
-        <% if current_user == answer.user %>
-        <p><%= link_to 'Edit Answer', edit_question_answer_path(@question.id, answer.id) %></p>
-        <% end %>
-
-          <hr></hr>
-          <% if current_user %>
-            <div class="comments-display-div">
-            <h4>Comments</h4>
-              <% answer.comments.each do |comment| %>
-                <p><%= comment.content %> - <%= link_to comment.author.name, user_path(comment.author.slug) %></p>
-              <% end %>
-                <%= link_to 'Add Comment', question_answer_comments_path(@question, answer) %>
-              <% end %>
-          </div>
-
-      </td>
-
-    </tr>
-
+    <% @question.answers.reverse.each do |answer| %>
+      <%= render partial: "/answers/answer", locals: { question: @question, answer: answer } %>
     <% end %>
   </table>
 

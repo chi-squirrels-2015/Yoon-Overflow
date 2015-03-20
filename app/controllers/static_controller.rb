@@ -1,7 +1,7 @@
 class StaticController < ApplicationController
 
   def index
-    @questions = Question.order(created_at: :desc)
+    @questions = Question.page(params[:page]).per(10)
   end
 
 end

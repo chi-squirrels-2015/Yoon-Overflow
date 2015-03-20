@@ -6,14 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 users = []
-5.times do
+50.times do
   users << User.create(name: Faker::Name.name, email: Faker::Internet.email,
                        password: "password", bio: Faker::Lorem.paragraph,
                        avatar_url: Faker::Avatar.image)
 end
 
 questions = []
-10.times do
+100.times do
   questions << Question.create(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph,
                                user: users.sample)
 end
